@@ -1,0 +1,41 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("/assets/website/fonts/matsurinode/flaticon.ttf") format("truetype"),
+url("/assets/website/fonts/matsurinode/flaticon.woff") format("woff"),
+url("/assets/website/fonts/matsurinode/flaticon.woff2") format("woff2"),
+url("/assets/website/fonts/matsurinode/flaticon.eot") format("embedded-opentype"),
+url("/assets/website/fonts/matsurinode/flaticon.svg") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-loupe:before {
+    content: "\f101";
+}
+.flaticon-magnifying-glass:before {
+    content: "\f102";
+}
+.flaticon-add:before {
+    content: "\f103";
+}
+.flaticon-plus:before {
+    content: "\f104";
+}
+.flaticon-girl:before {
+    content: "\f105";
+}
+.flaticon-virgo:before {
+    content: "\f106";
+}
+.flaticon-boy:before {
+    content: "\f107";
+}
