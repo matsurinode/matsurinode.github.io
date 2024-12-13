@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-CN" class="no-js">
+
+<head>
+        <link rel="canonical" href="https://matsurinode.github.io/news/article-25454.htm" />
+    <!-- Required Meta Tags Start -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>使用SpringBoot简单了解Druid的监控系统</title>
+        <meta name="description" content="Druid 介绍  说起 Druid，大家首先想到的是阿里的 Druid 数据库连接池 Apache Druid 具有以下特点：  亚秒级 OLAP 查询，包括多维过滤、Ad-hoc 的属性分组、快速" />
+        <link rel="icon" href="/assets/website/img/matsurinode/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required Meta Tags End -->
+    <!-- Favicon Tags Start -->
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Favicon Tags End -->
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/main.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMMQHM2EMD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KMMQHM2EMD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Add your site or application content here -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Preloader Start ||===============| -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__wrapper">
+                <div class="preloader__spinner"></div>
+                <div class="preloader__txt">
+                    <span data-text-preloader="M" class="letters-loading">M</span>
+                    <span data-text-preloader="a" class="letters-loading">a</span>
+                    <span data-text-preloader="t" class="letters-loading">t</span>
+                    <span data-text-preloader="s" class="letters-loading">s</span>
+                    <span data-text-preloader="u" class="letters-loading">u</span>
+                    <span data-text-preloader="r" class="letters-loading">r</span>
+                    <span data-text-preloader="i" class="letters-loading">i</span>
+                    <span data-text-preloader=" " class="letters-loading">&nbsp;</span>
+                    <span data-text-preloader="n" class="letters-loading">n</span>
+                    <span data-text-preloader="o" class="letters-loading">o</span>
+                    <span data-text-preloader="d" class="letters-loading">d</span>
+                    <span data-text-preloader="e" class="letters-loading">e</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- |=====|| Preloader End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Header Start ||===============| -->
+    <header class="header home1">
+        <!-- Header Menu Start -->
+        <div class="header__menu">
+            <div class="header__menu-wrapper">
+                <div class="container_xl_fluid">
+                    <div class="header__menu-outer">
+                        <div class="row">
+                            <div class="col-xxl-3 col-lg-4">
+                                <div class="header__logo">
+                                    <a href="/">
+                                                                            <span>Matsuri Node</span>
+                                                                        </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-lg-8">
+                                <div class="main-menu text-xxl-center text-end">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                                                                        <li><a href="/">首页</a></li>
+                                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                                        <li><a href="#">关于</a></li>
+                                            <li><a href="#">联系</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="mobile-menu"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Menu End -->
+    </header>
+    <!-- |=====|| Header End ||=================| -->
+    <!-- |==========================================| -->
+    <main>
+        <!-- |==========================================| -->
+        <!-- |=====|| Page Title Start ||===============| -->
+        <section class="pageTitle1">
+            <div class="pageTitle1__bg pageTitle1__bg__02"></div>
+            <div class="pageTitle1__breadCrumb">
+                <ul>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li><span>正文</span></li>
+                </ul>
+            </div>
+            <div class="pageTitle1__padding">
+                <div class="container_m container_l">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="pageTitle1__heading">
+                                <h1>使用SpringBoot简单了解Druid的监控系统</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| Page Title End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |=====|| About Start ||===============| -->
+        <section class="about1 content_box_pot_120">
+            <div class="content_box_pob_120">
+                <div class="container_m container_l content_box_pob_120">
+                    <div class="row">
+                        <div class="col-md-9">
+                                              				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h3> <a id="Druid__0" rel="nofollow"></a>Druid 介绍</h3> <ul> <li>说起 Druid，大家首先想到的是阿里的 Druid 数据库连接池</li> <li>Apache Druid 具有以下特点： <ul> <li>亚秒级 OLAP 查询，包括多维过滤、Ad-hoc 的属性分组、快速聚合数据等等。</li> <li>实时的数据消费，真正做到数据摄入实时、查询结果实时。</li> <li>高效的多租户能力，最高可以做到几千用户同时在线查询。</li> <li>扩展性强，支持 PB 级数据、千亿级事件快速处理，支持每秒数千查询并发。</li> <li>极高的高可用保障，支持滚动升级。</li> </ul> </li> </ul> <h4> <a id="Druid_10" rel="nofollow"></a>Druid监控系统作用</h4> <ol> <li>查看慢SQL [ 可进行对 SQL 优化 ]</li> <li>是否有恶意攻击</li> <li>并发时的数量</li> <li>事务的提交</li> <li>JDBC执行的次数</li> <li>访问时URL的监控</li> <li>请求的次数等等…</li> </ol> <p><strong>下面是Druid 的监控系统首页截图, 只需要简单配置就可以使用</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/3cb0acdd4c2cea356f9ea0cac00617ec.jpg" alt="使用SpringBoot简单了解Druid的监控系统"></p> <h4> <a id="_21" rel="nofollow"></a>开始配置</h4> <ol> <li>首先创建一个SpringBoot的项目</li> <li>需用引入以下几个工具</li> <li>如图<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/b7eee697e624da86cca16f9649ad3f69.jpg" alt="使用SpringBoot简单了解Druid的监控系统"> </li> <li>在 pom.xml 文件中引入druid连接池的依赖</li> </ol> <pre><code class="prism language-java"><span class="token generics"><span class="token punctuation">&lt;</span>dependency<span class="token punctuation">&gt;</span></span>    <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">&gt;</span></span>com<span class="token punctuation">.</span>alibaba<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">&gt;</span>     <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">&gt;</span></span>druid<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">&gt;</span>     <span class="token generics"><span class="token punctuation">&lt;</span>version<span class="token punctuation">&gt;</span></span><span class="token number">1.1</span><span class="token number">.10</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">&gt;</span> </code></pre> <ol start="5"> <li>在resources下新创建一个在 application.yml 文件, 指定使用druid的连接池</li> </ol> <pre><code class="prism language-java">spring<span class="token operator">:</span>   datasource<span class="token operator">:</span>  # <span class="token class-name">Springboot</span>默认会使用自带的 <span class="token class-name">HikariDataSource</span>     password<span class="token operator">:</span> root     username<span class="token operator">:</span> root     url<span class="token operator">:</span> jdbc<span class="token operator">:</span>mysql<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>localhost<span class="token operator">:</span><span class="token number">3306</span><span class="token operator">/</span>test<span class="token operator">?</span>useSSL<span class="token operator">=</span><span class="token boolean">false</span><span class="token operator">&amp;</span>useUnicode<span class="token operator">=</span><span class="token boolean">true</span><span class="token operator">&amp;</span>characterEncoding<span class="token operator">=</span><span class="token constant">UTF</span><span class="token operator">-</span><span class="token number">8</span><span class="token operator">&amp;</span>serverTimezone<span class="token operator">=</span><span class="token class-name">Asia</span><span class="token operator">/</span><span class="token class-name">Shanghai</span>     driver<span class="token operator">-</span><span class="token keyword">class</span><span class="token operator">-</span>name<span class="token operator">:</span> <span class="token class-name"><span class="token namespace">com<span class="token punctuation">.</span>mysql<span class="token punctuation">.</span>cj<span class="token punctuation">.</span>jdbc<span class="token punctuation">.</span></span>Driver</span>     type<span class="token operator">:</span> <span class="token class-name"><span class="token namespace">com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>pool<span class="token punctuation">.</span></span>DruidDataSource</span>  # 指定使用 druid 的连接池 </code></pre> <ol start="6"> <li>创建一个DruidConfig.java配置类</li> </ol> <pre><code class="prism language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>springboot<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>config</span><span class="token punctuation">;</span>  <span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>pool<span class="token punctuation">.</span></span><span class="token class-name">DruidDataSource</span></span><span class="token punctuation">;</span> <span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>support<span class="token punctuation">.</span>http<span class="token punctuation">.</span></span><span class="token class-name">StatViewServlet</span></span><span class="token punctuation">;</span> <span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>support<span class="token punctuation">.</span>http<span class="token punctuation">.</span></span><span class="token class-name">WebStatFilter</span></span><span class="token punctuation">;</span> <span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>context<span class="token punctuation">.</span>properties<span class="token punctuation">.</span></span><span class="token class-name">ConfigurationProperties</span></span><span class="token punctuation">;</span> <span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>web<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span></span><span class="token class-name">FilterRegistrationBean</span></span><span class="token punctuation">;</span> <span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>web<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span></span><span class="token class-name">ServletRegistrationBean</span></span><span class="token punctuation">;</span> <span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Bean</span></span><span class="token punctuation">;</span> <span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Configuration</span></span><span class="token punctuation">;</span>  <span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Arrays</span></span><span class="token punctuation">;</span> <span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">HashMap</span></span><span class="token punctuation">;</span> <span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Map</span></span><span class="token punctuation">;</span>  <span class="token comment">/**  * 对 Druid 的监控配置对象注入到容器中  * Created by YongXin Xue on 2020/06/04 15:18  */</span> <span class="token annotation punctuation">@Configuration</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DruidConfig</span> <span class="token punctuation">{<!-- --></span>     <span class="token comment">/**      *      * @return      */</span>     <span class="token annotation punctuation">@Bean</span>   <span class="token comment">// 当前类如果是组件类，对象创建时容器也会调用此方法将方法的返回值注入到容器中</span>     <span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span>prefix <span class="token operator">=</span> <span class="token string">"spring.datasource"</span><span class="token punctuation">)</span>  <span class="token comment">// 加载配置文件中的配置设置给返回的对象</span>     <span class="token keyword">public</span> <span class="token class-name">DruidDataSource</span> <span class="token function">getDataSoures</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">DruidDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>      <span class="token comment">/**      * 配置一个管理后台的Servlet [ 配置Druid的监控系统 ]      * 访问时默认会生成一个页面      * @return      */</span>     <span class="token annotation punctuation">@Bean</span>     <span class="token keyword">public</span> <span class="token class-name">ServletRegistrationBean</span> <span class="token function">statViewServlet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token comment">// 当前 Druid 的后台监控系统的访问地址 /druid/*</span>         <span class="token class-name">ServletRegistrationBean</span> bean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServletRegistrationBean</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">StatViewServlet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"/druid/*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> initParams <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         initParams<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"loginUsername"</span><span class="token punctuation">,</span> <span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         initParams<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"loginPassword"</span><span class="token punctuation">,</span> <span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// 默认就是允许所有访问</span>         initParams<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"allow"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         initParams<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"deny"</span><span class="token punctuation">,</span> <span class="token string">"192.168.15.21"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//ip黑名单</span>          bean<span class="token punctuation">.</span><span class="token function">setInitParameters</span><span class="token punctuation">(</span>initParams<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">return</span> bean<span class="token punctuation">;</span>     <span class="token punctuation">}</span>      <span class="token comment">/**      * 配置一个web监控的filter：访问静态资源一定没有sql操作      * @return      */</span>     <span class="token annotation punctuation">@Bean</span>     <span class="token keyword">public</span> <span class="token class-name">FilterRegistrationBean</span> <span class="token function">webStatFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token class-name">FilterRegistrationBean</span> bean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FilterRegistrationBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         bean<span class="token punctuation">.</span><span class="token function">setFilter</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WebStatFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> initParams <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//排除过滤</span>         initParams<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"exclusions"</span><span class="token punctuation">,</span> <span class="token string">"*.jpg,*.avi,*.js,*.css,/druid/*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          bean<span class="token punctuation">.</span><span class="token function">setInitParameters</span><span class="token punctuation">(</span>initParams<span class="token punctuation">)</span><span class="token punctuation">;</span>         bean<span class="token punctuation">.</span><span class="token function">setUrlPatterns</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"/*"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">return</span> bean<span class="token punctuation">;</span>     <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <ol start="7"> <li> <p>配置完成后, 运行主程序在浏览器输入本机的地址加自己配置的tomcat端口加/druid/既可以打开druid的后台监控系统了</p> </li> <li> <p>如图<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/bdc26ea88273d15917407e7d07e15664.jpg" alt="使用SpringBoot简单了解Druid的监控系统"></p> </li> <li> <p>赶紧来写两行代码测测性能吧 !!</p> </li> </ol> <p><strong>感谢阅读, 如果有更好的建议或者方案可以留言评论哦!</strong></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-24993.htm">动物疫苗销售需要什么手续呢多少钱一针（动物疫苗经销商）</a></p>
+                                        <p>下一个：<a href="/news/article-25456.htm">动物疫苗赚钱吗知乎（做动物疫苗前景）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-22680.htm" title="kafka开机自启动配置">kafka开机自启动配置</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-25-free-subscribe-node.htm" title="Matsuri Node节点订阅每天更新19.9M/S免费节点订阅链接">Matsuri Node节点订阅每天更新19.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-19933.htm" title="动物医院助理操作规程（动物医院助理考核）">动物医院助理操作规程（动物医院助理考核）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-free-high-speed-nodes.htm" title="Matsuri Node节点订阅每天更新22.1M/S免费节点订阅链接">Matsuri Node节点订阅每天更新22.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-15-node-share.htm" title="Matsuri Node节点订阅每天更新20.1M/S免费节点订阅链接">Matsuri Node节点订阅每天更新20.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24991.htm" title="一个完整的pytorch预训练实现图像分类，模型融合">一个完整的pytorch预训练实现图像分类，模型融合</a></li>
+                        <li class="py-2"><a href="/news/article-18994.htm" title="领养宠物的平台有哪些（领养宠物免费的地方在哪里）">领养宠物的平台有哪些（领养宠物免费的地方在哪里）</a></li>
+                        <li class="py-2"><a href="/news/article-23137.htm" title="如何阅读一份源代码">如何阅读一份源代码</a></li>
+                        <li class="py-2"><a href="/news/article-24452.htm" title="Redis事务详解">Redis事务详解</a></li>
+                        <li class="py-2"><a href="/news/article-19932.htm" title="吉泰实业（吉泰置业）">吉泰实业（吉泰置业）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| About End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+    </main>
+        <!-- |==========================================| -->
+    <!-- |=====|| Footer Start ||===============| -->
+    <footer class="footer1">
+        <div class="footer1__bottom">
+            <div class="container_m_30 container_l">
+                <div class="row">
+                    <div class="col-md-12 col_padding">
+                        <div class="footer1__bottom__copyRight text-center">
+                            <p><a href="/">Matsuri Node免费机场订阅节点官网</a> 版权所有 Powered by WordPress</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col_padding">
+                        <div class="footer1__bottom__nav text-center text-lg-start">
+                            <a href="#">Customer Support</a>
+                            <a href="#">Terms & Conditions</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col_padding">
+                        <div class="footer1__bottom__social text-center text-lg-end">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- |=====|| Footer End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| ScrollToTop Start ||===============| -->
+    <a href="#" class="scrollToTop">
+        <i class="fas fa-level-up-alt"></i>
+    </a>
+    <!-- |=====|| ScrollToTop End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| All js here ||===============| -->
+    <script src="/assets/website/js/frontend/matsurinode/modernizr-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery-3.6.2.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.nice-select.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.fancybox.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.meanmenu.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/one-page-nav-min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/feather.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+    <!-- |=====|| All js End ||=================| -->
+    <!-- |==========================================| -->
+</body>
+
+</html>
