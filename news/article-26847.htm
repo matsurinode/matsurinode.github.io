@@ -133,7 +133,8 @@
                 <div class="container_m container_l content_box_pob_120">
                     <div class="row">
                         <div class="col-md-9">
-                                              				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p>先看效果图吧！！！！<br /> 1.添加一条信息<img decoding="async" src="http://img.555519.xyz/uploads/20230109/b6d10f8e2036e19cba7b02b3a43bcaa5.jpg" alt="vue实现简单评论功能"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230109/3ba807925fb846ae1f4fbcb3ff545790.jpg" alt="vue实现简单评论功能"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230109/dd3d68fd321a692e05bfc1aab0ec9043.jpg" alt="vue实现简单评论功能"><br /> 接下来让我们看代码吧！</p> <pre><code class="prism language-//样式">	&lt;style type="text/css"&gt; 			*{ 				padding: 0;margin: 0; 			} 			.box{ 				margin: 30px; 				width: 500px; 				height: 500px; 				display: flex; 			} 			p{ 				margin-top: 10px; 			} 			a{ 				text-decoration: none; 				float: right; 			} 			ul{ 				margin-left: 30px; 			} 			li{ 				width: 300px; 				white-space: nowrap; 				overflow: hidden; 				text-overflow: ellipsis; 				height: 50px; 				line-height: 50px; 				border:1px solid #CCCCCC; 				padding: 0 20px; 				list-style: none; 			} 			.speak{ 				margin-left: 30px; 			} 		&lt;/style&gt; 	&lt;/head&gt; 	&lt;body&gt; 	//html 		&lt;div class="box"&gt; 			&lt;div class="user"&gt; 			&lt;p&gt;用户名&lt;/p&gt; 			&lt;!-- @keyup监听键盘事件 --&gt; 			&lt;!-- @keyup.enter回车键获取值 --&gt; 			&lt;p&gt;&lt;input v-model.trim="user" @keyup.enter="addItem()" type="text" placeholder="用户名" /&gt;&lt;/p&gt; 			&lt;p&gt;吐槽内容&lt;/p&gt; 			&lt;p&gt;&lt;textarea v-model="comm" @keyup.enter="addItem()" placeholder="吐槽内容"&gt;&lt;/textarea&gt;&lt;/p&gt; 			&lt;p&gt;&lt;button type="button" @click="btn"&gt;提交&lt;/button&gt;&lt;/p&gt; 			&lt;/div&gt; 			 			 			&lt;div class="speak"&gt; 				&lt;p&gt;吐槽回复：&lt;/p&gt; 				&lt;ul v-for="(item,index) in list" :key="item.name"&gt; 					&lt;li&gt;{<!-- -->{item.name}}说：{<!-- -->{item.txt}}&lt;a href="#" @click="delItem(item)"&gt;删除&lt;/a&gt;&lt;/li&gt; 				&lt;/ul&gt; 			&lt;/div&gt; 		&lt;/div&gt; 		//js 		&lt;script type="text/javascript"&gt; 			new Vue({ 				el:".box", 				data(){ 					return{ 						// 评论用户以及内容的数据 						// name评论的用户名字 txt评论的内容 						list:[ 							{name:"tom",txt:"笑不活了"}, 							{name:"jarry",txt:"买了吧"}, 							{name:"小爱同学",txt:"可恶，有被装到"}, 							{name:"小一",txt:"鹅鹅鹅，曲项向天歌"} 						], 						user:"",//输入的名字存入 						comm:"",//评论存入 					} 				}, 				methods:{ 					// 点击按钮提交 					btn(){ 						var usercom={ 							name:this.user, 							txt:this.comm 						} 						this.list.unshift(usercom) 						this.user=""; 						this.comm=""; 					}, 					// 用户名方法事件 					addItem(){ 						// 创建用户名 						var item={ 							// 用户名字 						name:this.user, 						// 用户评论 						txt:this.comm, 						}; 						 						// 在list前面添加 item    unshift在前面添加 						this.list.unshift(item) 						 						// 清空user 						this.user=""; 						// 清空评论 						this.comm=""; 					}, 					//删除点击事件  获取元素 					delItem(item){ 						// 查找元素item在list里的下标 						var ind=this.list.findIndex(value=&gt;value.name==item.name); 						//删除 						// splice 功能（从第几个元素，删除几个 添加内容） 						this.list.splice(ind,1); 					} 				} 			}) 		&lt;/script&gt; </code></pre> </p></div> 			                <div class="clearfix"></div>
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p>先看效果图吧！！！！<br /> 1.添加一条信息<img decoding="async" src="http://img.555519.xyz/uploads/20230109/b6d10f8e2036e19cba7b02b3a43bcaa5.jpg" alt="vue实现简单评论功能"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230109/3ba807925fb846ae1f4fbcb3ff545790.jpg" alt="vue实现简单评论功能"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230109/dd3d68fd321a692e05bfc1aab0ec9043.jpg" alt="vue实现简单评论功能"><br /> 接下来让我们看代码吧！</p> <pre><code class="prism language-//样式">	&lt;style type="text/css"&gt; 			*{ 				padding: 0;margin: 0; 			} 			.box{ 				margin: 30px; 				width: 500px; 				height: 500px; 				display: flex; 			} 			p{ 				margin-top: 10px; 			} 			a{ 				text-decoration: none; 				float: right; 			} 			ul{ 				margin-left: 30px; 			} 			li{ 				width: 300px; 				white-space: nowrap; 				overflow: hidden; 				text-overflow: ellipsis; 				height: 50px; 				line-height: 50px; 				border:1px solid #CCCCCC; 				padding: 0 20px; 				list-style: none; 			} 			.speak{ 				margin-left: 30px; 			} 		&lt;/style&gt; 	&lt;/head&gt; 	&lt;body&gt; 	//html 		&lt;div class="box"&gt; 			&lt;div class="user"&gt; 			&lt;p&gt;用户名&lt;/p&gt; 			&lt;!-- @keyup监听键盘事件 --&gt; 			&lt;!-- @keyup.enter回车键获取值 --&gt; 			&lt;p&gt;&lt;input v-model.trim="user" @keyup.enter="addItem()" type="text" placeholder="用户名" /&gt;&lt;/p&gt; 			&lt;p&gt;吐槽内容&lt;/p&gt; 			&lt;p&gt;&lt;textarea v-model="comm" @keyup.enter="addItem()" placeholder="吐槽内容"&gt;&lt;/textarea&gt;&lt;/p&gt; 			&lt;p&gt;&lt;button type="button" @click="btn"&gt;提交&lt;/button&gt;&lt;/p&gt; 			&lt;/div&gt; 			 			 			&lt;div class="speak"&gt; 				&lt;p&gt;吐槽回复：&lt;/p&gt; 				&lt;ul v-for="(item,index) in list" :key="item.name"&gt; 					&lt;li&gt;{<!-- -->{item.name}}说：{<!-- -->{item.txt}}&lt;a href="#" @click="delItem(item)"&gt;删除&lt;/a&gt;&lt;/li&gt; 				&lt;/ul&gt; 			&lt;/div&gt; 		&lt;/div&gt; 		//js 		&lt;script type="text/javascript"&gt; 			new Vue({ 				el:".box", 				data(){ 					return{ 						// 评论用户以及内容的数据 						// name评论的用户名字 txt评论的内容 						list:[ 							{name:"tom",txt:"笑不活了"}, 							{name:"jarry",txt:"买了吧"}, 							{name:"小爱同学",txt:"可恶，有被装到"}, 							{name:"小一",txt:"鹅鹅鹅，曲项向天歌"} 						], 						user:"",//输入的名字存入 						comm:"",//评论存入 					} 				}, 				methods:{ 					// 点击按钮提交 					btn(){ 						var usercom={ 							name:this.user, 							txt:this.comm 						} 						this.list.unshift(usercom) 						this.user=""; 						this.comm=""; 					}, 					// 用户名方法事件 					addItem(){ 						// 创建用户名 						var item={ 							// 用户名字 						name:this.user, 						// 用户评论 						txt:this.comm, 						}; 						 						// 在list前面添加 item    unshift在前面添加 						this.list.unshift(item) 						 						// 清空user 						this.user=""; 						// 清空评论 						this.comm=""; 					}, 					//删除点击事件  获取元素 					delItem(item){ 						// 查找元素item在list里的下标 						var ind=this.list.findIndex(value=&gt;value.name==item.name); 						//删除 						// splice 功能（从第几个元素，删除几个 添加内容） 						this.list.splice(ind,1); 					} 				} 			}) 		&lt;/script&gt; </code></pre> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-26393.htm">给我讲一讲宫颈糜烂(宫颈糜烂的真相)</a></p>
                                         <p>下一个：<a href="/news/article-26850.htm">动物医院贵吗多少钱一个月 动物医院贵吗多少钱一个月啊</a></p>
@@ -146,16 +147,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-19933.htm" title="动物医院助理操作规程（动物医院助理考核）">动物医院助理操作规程（动物医院助理考核）</a></li>
-                        <li class="py-2"><a href="/news/article-27312.htm" title="天津宠物狗领养中心在哪里（天津狗狗领养中心地址）">天津宠物狗领养中心在哪里（天津狗狗领养中心地址）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-29-free-node-subscribe.htm" title="Matsuri Node节点订阅每天更新19.7M/S免费节点订阅链接">Matsuri Node节点订阅每天更新19.7M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-26847.htm" title="vue实现简单评论功能">vue实现简单评论功能</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-free-high-speed-nodes.htm" title="Matsuri Node节点订阅每天更新19.9M/S免费节点订阅链接">Matsuri Node节点订阅每天更新19.9M/S免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/news/article-20389.htm" title="猫疫苗可以自己打吗?（猫的疫苗可以自己打吗）">猫疫苗可以自己打吗?（猫的疫苗可以自己打吗）</a></li>
-                        <li class="py-2"><a href="/news/article-25456.htm" title="动物疫苗赚钱吗知乎（做动物疫苗前景）">动物疫苗赚钱吗知乎（做动物疫苗前景）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-15-node-share.htm" title="Matsuri Node节点订阅每天更新20.1M/S免费节点订阅链接">Matsuri Node节点订阅每天更新20.1M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-26-free-node-subscribe.htm" title="Matsuri Node节点订阅每天更新20.7M/S免费节点订阅链接">Matsuri Node节点订阅每天更新20.7M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-24050.htm" title="宠物领养电子协议 宠物领养电子协议具有法律效应吗">宠物领养电子协议 宠物领养电子协议具有法律效应吗</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-27-free-high-speed-nodes.htm" title="Matsuri Node节点订阅每天更新19.7M/S免费节点订阅链接">Matsuri Node节点订阅每天更新19.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24450.htm" title="SpringBoot之把数据库导出到Excel表">SpringBoot之把数据库导出到Excel表</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-node-share-links.htm" title="Matsuri Node节点订阅每天更新21.4M/S免费节点订阅链接">Matsuri Node节点订阅每天更新21.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20391.htm" title="南京领养猫咪协议一般押金多少钱一个月（南京在哪领养猫）">南京领养猫咪协议一般押金多少钱一个月（南京在哪领养猫）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-3-free-node-subscribe.htm" title="Matsuri Node节点订阅每天更新22.5M/S免费节点订阅链接">Matsuri Node节点订阅每天更新22.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-16-free-high-speed-nodes.htm" title="Matsuri Node节点订阅每天更新22.6M/S免费节点订阅链接">Matsuri Node节点订阅每天更新22.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-free-node-subscribe.htm" title="Matsuri Node节点订阅每天更新19.2M/S免费节点订阅链接">Matsuri Node节点订阅每天更新19.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-27312.htm" title="天津宠物狗领养中心在哪里（天津狗狗领养中心地址）">天津宠物狗领养中心在哪里（天津狗狗领养中心地址）</a></li>
+                        <li class="py-2"><a href="/news/article-18995.htm" title="想寄猫怎么寄（想寄猫怎么寄快递）">想寄猫怎么寄（想寄猫怎么寄快递）</a></li>
                     </ul>
     </div>
 </div>
@@ -167,7 +168,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -193,6 +194,15 @@
                 <div class="row">
                     <div class="col-md-12 col_padding">
                         <div class="footer1__bottom__copyRight text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
                             <p><a href="/">Matsuri Node免费机场订阅节点官网</a> 版权所有 Powered by WordPress</p>
                         </div>
                     </div>
