@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="zh-CN" class="no-js">
+
+<head>
+        <link rel="canonical" href="https://matsurinode.github.io/news/article-34874.htm" />
+    <!-- Required Meta Tags Start -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>通过C#/python实现Hadoop MapReduce_在线工具</title>
+        <meta name="description" content="MapReduce Hadoop中将数据切分成块存在HDFS不同的DataNode中，如果想汇总，按照常规想法就是，移动数据到统计程序：先把数据读取到一个程序中，再进行汇总。 但是HDFS存的数据量非" />
+        <link rel="icon" href="/assets/website/img/matsurinode/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required Meta Tags End -->
+    <!-- Favicon Tags Start -->
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Favicon Tags End -->
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/main.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMMQHM2EMD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KMMQHM2EMD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Add your site or application content here -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Preloader Start ||===============| -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__wrapper">
+                <div class="preloader__spinner"></div>
+                <div class="preloader__txt">
+                    <span data-text-preloader="M" class="letters-loading">M</span>
+                    <span data-text-preloader="a" class="letters-loading">a</span>
+                    <span data-text-preloader="t" class="letters-loading">t</span>
+                    <span data-text-preloader="s" class="letters-loading">s</span>
+                    <span data-text-preloader="u" class="letters-loading">u</span>
+                    <span data-text-preloader="r" class="letters-loading">r</span>
+                    <span data-text-preloader="i" class="letters-loading">i</span>
+                    <span data-text-preloader=" " class="letters-loading">&nbsp;</span>
+                    <span data-text-preloader="n" class="letters-loading">n</span>
+                    <span data-text-preloader="o" class="letters-loading">o</span>
+                    <span data-text-preloader="d" class="letters-loading">d</span>
+                    <span data-text-preloader="e" class="letters-loading">e</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- |=====|| Preloader End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Header Start ||===============| -->
+    <header class="header home1">
+        <!-- Header Menu Start -->
+        <div class="header__menu">
+            <div class="header__menu-wrapper">
+                <div class="container_xl_fluid">
+                    <div class="header__menu-outer">
+                        <div class="row">
+                            <div class="col-xxl-3 col-lg-4">
+                                <div class="header__logo">
+                                    <a href="/">
+                                                                            <span>Matsuri Node</span>
+                                                                        </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-lg-8">
+                                <div class="main-menu text-xxl-center text-end">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                                                                        <li><a href="/">首页</a></li>
+                                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                                        <li><a href="#">关于</a></li>
+                                            <li><a href="#">联系</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="mobile-menu"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Menu End -->
+    </header>
+    <!-- |=====|| Header End ||=================| -->
+    <!-- |==========================================| -->
+    <main>
+        <!-- |==========================================| -->
+        <!-- |=====|| Page Title Start ||===============| -->
+        <section class="pageTitle1">
+            <div class="pageTitle1__bg pageTitle1__bg__02"></div>
+            <div class="pageTitle1__breadCrumb">
+                <ul>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li><span>正文</span></li>
+                </ul>
+            </div>
+            <div class="pageTitle1__padding">
+                <div class="container_m container_l">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="pageTitle1__heading">
+                                <h1>通过C#/python实现Hadoop MapReduce_在线工具</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| Page Title End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |=====|| About Start ||===============| -->
+        <section class="about1 content_box_pot_120">
+            <div class="content_box_pob_120">
+                <div class="container_m container_l content_box_pob_120">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<h2>MapReduce</h2> <p>Hadoop中将数据切分成块存在HDFS不同的DataNode中，如果想汇总，按照常规想法就是，移动数据到统计程序：先把数据读取到一个程序中，再进行汇总。</p> <p>但是HDFS存的数据量非常大时，对汇总程序所在的服务器将产生巨大压力，并且网络IO也十分消耗资源。</p> <p>为了解决这种问题，MapReduce提出一种想法：<em><strong>将统计程序移动到DataNode</strong></em>，每台DataNode（就近）统计完再汇总，充分利用DataNode的计算资源。YARN的调度决定了MapReduce程序所在的Node。</p> <h2>MapReduce过程</h2> <ol> <li>确保数据存在HDFS上</li> <li>MapReduce提交给ResourceManager（RM），RM创建一个Job。</li> <li>文件分片，默认将一个数据块作为一个分片。</li> <li>Job提交给RM，RM根据Node状态选择一台合适的Node调度AM，AM向RM申请资源，RM调度合适的NM启动Container，Container执行Task。</li> <li>Map的输出放入环形内存缓冲区，缓存溢出时，写入磁盘，写入磁盘有以下步骤 <ol> <li>默认根据Hash分区，分区数取决于Reduce Task的数，相同Key的记录被送到相同Reduce处理</li> <li>将Map输出的结果排序</li> <li>将Map数据合并</li> <li>MapTask处理后产生多个溢出文件，会将多个溢出文件合并，生成一个经过分区和排序的MapOutFile(MOF)，这个过程称为Spill</li> </ol> </li> <li>MOF输出到3%时开始进行Reduce Task</li> <li>MapTask与ReduceTask之间传输数据的过程称为Shuffle。</li> </ol> <p>下面这个图描述了具体的流程</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/00c38093ca6bc4ed8238ca3cbc30fcc9.jpg" alt="通过C#/python实现Hadoop MapReduce_在线工具"></p> <h2>Hadoop Streaming</h2> <p>Hadoop中可以通过Java来编写MapReduce，针对不熟悉Java的开发者，Hadoop提供了通过可执行程序或者脚本的方式创建MapReduce的Hadoop Streaming。</p> <h2>Hadoop streaming处理步骤</h2> <div> <p>hadoop streaming通过用户编写的map函数中标准输入读取数据（一行一行地读取），按照map函数的处理逻辑处理后，将处理后的数据由标准输出进行输出到下一个阶段。</p> <p>reduce函数也是按行读取数据，按照函数的处理逻辑处理完数据后，将它们通过标准输出写到hdfs的指定目录中。</p> <p>不管使用的是何种编程语言，在map函数中，原始数据会被处理成&lt;key,value&gt;的形式，但是key与value之间必须通过\t分隔符分隔，分隔符左边的是key，分隔符右边的是value,如果没有使用\t分隔符，那么整行都会被当作key</p> <h2>C#版MapReduce</h2> <p>首先，新增测试数据</p> </div> <div> <div> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">vi</span><span style="color: rgba(0, 0, 0, 1)"> mpdata  I love Beijing I love China Beijing is the capital of China</span></pre> </div> </div> <p>然后，将文件上传到hdfs</p> <div class="cnblogs_code"> <pre>[root@localhost ~]# hadoop fs -put mrdata /chesterdata</pre> </div> <p>新建dotnet6的console项目mapper，修改Program.cs</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> System;</span><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> System.Text.RegularExpressions;</span><span style="color: rgba(0, 0, 255, 1)">namespace</span><span style="color: rgba(0, 0, 0, 1)"> mapper {</span><span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> Program     {</span><span style="color: rgba(0, 0, 255, 1)">static</span><span style="color: rgba(0, 0, 255, 1)">void</span> Main(<span style="color: rgba(0, 0, 255, 1)">string</span><span style="color: rgba(0, 0, 0, 1)">[] args)         {</span><span style="color: rgba(0, 0, 255, 1)">string</span><span style="color: rgba(0, 0, 0, 1)"> line;</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">Hadoop passes data to the mapper on STDIN</span><span style="color: rgba(0, 0, 255, 1)">while</span>((line = Console.ReadLine()) !=<span style="color: rgba(0, 0, 255, 1)">null</span><span style="color: rgba(0, 0, 0, 1)">)             {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> We only want words, so strip out punctuation, numbers, etc.</span><span style="color: rgba(0, 0, 255, 1)">var</span> onlyText = Regex.Replace(line,<span style="color: rgba(128, 0, 0, 1)">@"</span><span style="color: rgba(128, 0, 0, 1)">\.|;|:|,|[0-9]|'</span><span style="color: rgba(128, 0, 0, 1)">"</span>,<span style="color: rgba(128, 0, 0, 1)">""</span><span style="color: rgba(0, 0, 0, 1)">);</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> Split at whitespace.</span><span style="color: rgba(0, 0, 255, 1)">var</span> words = Regex.Matches(onlyText,<span style="color: rgba(128, 0, 0, 1)">@"</span><span style="color: rgba(128, 0, 0, 1)">[\w]+</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">);</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> Loop over the words</span><span style="color: rgba(0, 0, 255, 1)">foreach</span>(<span style="color: rgba(0, 0, 255, 1)">var</span> word<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> words)                 {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">Emit tab-delimited key/value pairs.</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">In this case, a word and a count of 1.</span>                     Console.WriteLine(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">{0}\t1</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">,word);                 }             }         }     } }</span></pre> </div> <p>发布mapper</p> <div class="cnblogs_code"> <pre>cd /demo/dotnet/mapper/<span style="color: rgba(0, 0, 0, 1)"> dotnet publish</span>-c Release -r linux-x64 /p:PublishSingleFile=<span style="color: rgba(0, 0, 255, 1)">true</span></pre> </div> <p>新建dotnet6的console项目reducer，修改Program.cs</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> System;</span><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> System.Collections.Generic;</span><span style="color: rgba(0, 0, 255, 1)">namespace</span><span style="color: rgba(0, 0, 0, 1)"> reducer {</span><span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> Program     {</span><span style="color: rgba(0, 0, 255, 1)">static</span><span style="color: rgba(0, 0, 255, 1)">void</span> Main(<span style="color: rgba(0, 0, 255, 1)">string</span><span style="color: rgba(0, 0, 0, 1)">[] args)         {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">Dictionary for holding a count of words</span>             Dictionary&lt;<span style="color: rgba(0, 0, 255, 1)">string</span>,<span style="color: rgba(0, 0, 255, 1)">int</span>&gt; words =<span style="color: rgba(0, 0, 255, 1)">new</span> Dictionary&lt;<span style="color: rgba(0, 0, 255, 1)">string</span>,<span style="color: rgba(0, 0, 255, 1)">int</span>&gt;<span style="color: rgba(0, 0, 0, 1)">();</span><span style="color: rgba(0, 0, 255, 1)">string</span><span style="color: rgba(0, 0, 0, 1)"> line;</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">Read from STDIN</span><span style="color: rgba(0, 0, 255, 1)">while</span> ((line = Console.ReadLine()) !=<span style="color: rgba(0, 0, 255, 1)">null</span><span style="color: rgba(0, 0, 0, 1)">)             {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> Data from Hadoop is tab-delimited key/value pairs</span><span style="color: rgba(0, 0, 255, 1)">var</span> sArr = line.Split(<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">\t</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">);</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> Get the word</span><span style="color: rgba(0, 0, 255, 1)">string</span> word = sArr[<span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(0, 0, 0, 1)">];</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> Get the count</span><span style="color: rgba(0, 0, 255, 1)">int</span> count = Convert.ToInt32(sArr[<span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)">]);</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">Do we already have a count for the word?</span><span style="color: rgba(0, 0, 255, 1)">if</span><span style="color: rgba(0, 0, 0, 1)">(words.ContainsKey(word))                 {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">If so, increment the count</span>                     words[word] +=<span style="color: rgba(0, 0, 0, 1)"> count;                 }</span><span style="color: rgba(0, 0, 255, 1)">else</span><span style="color: rgba(0, 0, 0, 1)">                 {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">Add the key to the collection</span><span style="color: rgba(0, 0, 0, 1)">                    words.Add(word, count);                 }             }</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">Finally, emit each word and count</span><span style="color: rgba(0, 0, 255, 1)">foreach</span> (<span style="color: rgba(0, 0, 255, 1)">var</span> word<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> words)             {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">Emit tab-delimited key/value pairs.</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">In this case, a word and a count of 1.</span>                 Console.WriteLine(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">{0}\t{1}</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">, word.Key, word.Value);             }         }     } }</span></pre> </div> <p>发布reducer</p> <div class="cnblogs_code"> <pre>/demo/dotnet/<span style="color: rgba(0, 0, 0, 1)">reducer dotnet publish</span>-c Release -r linux-x64 /p:PublishSingleFile=<span style="color: rgba(0, 0, 255, 1)">true</span></pre> </div> <p>执行mapepr reduce</p> <div class="cnblogs_code"> <pre>hadoop jar /usr/local/hadoop323/hadoop-<span style="color: rgba(128, 0, 128, 1)">3.2</span>.<span style="color: rgba(128, 0, 128, 1)">3</span>/share/hadoop/tools/lib/hadoop-streaming-<span style="color: rgba(128, 0, 128, 1)">3.2</span>.<span style="color: rgba(128, 0, 128, 1)">3</span>.jar -input /chesterdata/mrdata -output /dotnetmroutput -mapper<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">./mapper</span><span style="color: rgba(128, 0, 0, 1)">"</span> -reducer<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">./reducer</span><span style="color: rgba(128, 0, 0, 1)">"</span> -file /demo/dotnet/mapper/bin/Release/net6.<span style="color: rgba(128, 0, 128, 1)">0</span>/linux-x64/publish/mapper -f /demo/dotnet/reducer/bin/Release/net6.<span style="color: rgba(128, 0, 128, 1)">0</span>/linux-x64/publish/reducer</pre> </div> <p>查看mapreduce结果</p> <div class="cnblogs_code"> <pre>[root@localhost reducer]# hadoop fs -ls /<span style="color: rgba(0, 0, 0, 1)">dotnetmroutput</span>-rw-r--r--<span style="color: rgba(128, 0, 128, 1)">1</span> root supergroup<span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(128, 0, 128, 1)">2022</span>-<span style="color: rgba(128, 0, 128, 1)">05</span>-<span style="color: rgba(128, 0, 128, 1)">01</span><span style="color: rgba(128, 0, 128, 1)">16</span>:<span style="color: rgba(128, 0, 128, 1)">40</span> /dotnetmroutput/<span style="color: rgba(0, 0, 0, 1)">_SUCCESS</span>-rw-r--r--<span style="color: rgba(128, 0, 128, 1)">1</span> root supergroup<span style="color: rgba(128, 0, 128, 1)">55</span><span style="color: rgba(128, 0, 128, 1)">2022</span>-<span style="color: rgba(128, 0, 128, 1)">05</span>-<span style="color: rgba(128, 0, 128, 1)">01</span><span style="color: rgba(128, 0, 128, 1)">16</span>:<span style="color: rgba(128, 0, 128, 1)">40</span> /dotnetmroutput/part-<span style="color: rgba(128, 0, 128, 1)">00000</span></pre> </div> <p>查看part-00000内容</p> <div class="cnblogs_code"> <pre>[root@localhost reducer]# hadoop fs -cat /dotnetmroutput/part-<span style="color: rgba(128, 0, 128, 1)">00000</span><span style="color: rgba(0, 0, 0, 1)">  Beijing</span><span style="color: rgba(128, 0, 128, 1)">2</span><span style="color: rgba(0, 0, 0, 1)"> China</span><span style="color: rgba(128, 0, 128, 1)">2</span><span style="color: rgba(0, 0, 0, 1)"> I</span><span style="color: rgba(128, 0, 128, 1)">2</span><span style="color: rgba(0, 0, 0, 1)"> capital</span><span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 255, 1)">is</span><span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)"> love</span><span style="color: rgba(128, 0, 128, 1)">2</span><span style="color: rgba(0, 0, 0, 1)"> of</span><span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)"> the</span><span style="color: rgba(128, 0, 128, 1)">1</span></pre> </div> <p>可以看到dotnet模式的Hadoop Streaming已经执行成功。</p> <h2>Python版MapReduce</h2> <div>使用与dotnet模式下同样的测试数据，编写mapper</div> <div> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)"> mapper.py</span><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> sys</span><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> re p</span>= re.compile(r<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">\w+</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">)</span><span style="color: rgba(0, 0, 255, 1)">for</span> line<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> sys.stdin:     words</span>= line.strip().split(<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">)</span><span style="color: rgba(0, 0, 255, 1)">for</span> word<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> words:         w</span>=<span style="color: rgba(0, 0, 0, 1)"> p.findall(word)</span><span style="color: rgba(0, 0, 255, 1)">if</span> len(w) &lt; 1<span style="color: rgba(0, 0, 0, 1)">:</span><span style="color: rgba(0, 0, 255, 1)">continue</span><span style="color: rgba(0, 0, 0, 1)">         s</span>=<span style="color: rgba(0, 0, 0, 1)"> w[0].strip().lower()</span><span style="color: rgba(0, 0, 255, 1)">if</span> s !=<span style="color: rgba(128, 0, 0, 1)">""</span><span style="color: rgba(0, 0, 0, 1)">:</span><span style="color: rgba(0, 0, 255, 1)">print</span>(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">%s\t%s</span><span style="color: rgba(128, 0, 0, 1)">"</span> % (s, 1))</pre> </div> </div> <div> <p>编写reducer</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)"> reducer.py</span><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> sys res</span>=<span style="color: rgba(0, 0, 0, 1)"> dict()</span><span style="color: rgba(0, 0, 255, 1)">for</span> word_one<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> sys.stdin:     word, one</span>= word_one.strip().split(<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">\t</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">)</span><span style="color: rgba(0, 0, 255, 1)">if</span> word<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> res.keys():         res[word]</span>= res[word] + 1<span style="color: rgba(0, 0, 255, 1)">else</span><span style="color: rgba(0, 0, 0, 1)">:         res[word]</span>= 1<span style="color: rgba(0, 0, 255, 1)">print</span>(res)</pre> </div> <p>执行mapreduce</p> <div class="cnblogs_code"> <pre>hadoop jar /usr/local/hadoop323/hadoop-<span style="color: rgba(128, 0, 128, 1)">3.2</span>.<span style="color: rgba(128, 0, 128, 1)">3</span>/share/hadoop/tools/lib/hadoop-streaming-<span style="color: rgba(128, 0, 128, 1)">3.2</span>.<span style="color: rgba(128, 0, 128, 1)">3</span>.jar -input /chesterdata/mrdata -output /mroutput -mapper<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">python3 mapper.py</span><span style="color: rgba(128, 0, 0, 1)">"</span> -reducer<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">python3 reducer.py</span><span style="color: rgba(128, 0, 0, 1)">"</span> -<span style="color: rgba(0, 0, 255, 1)">file</span> /root/mapper.py -<span style="color: rgba(0, 0, 255, 1)">file</span> /root/reducer.py</pre> </div> <p>查看mapreduce结果</p> <div class="cnblogs_code"> <pre>[root@localhost lib]# hadoop fs -<span style="color: rgba(0, 0, 255, 1)">ls</span> /<span style="color: rgba(0, 0, 0, 1)">mroutput</span>-rw-r--r--<span style="color: rgba(128, 0, 128, 1)">1</span> root supergroup<span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(128, 0, 128, 1)">2022</span>-<span style="color: rgba(128, 0, 128, 1)">05</span>-<span style="color: rgba(128, 0, 128, 1)">01</span><span style="color: rgba(128, 0, 128, 1)">05</span>:<span style="color: rgba(128, 0, 128, 1)">00</span> /mroutput/<span style="color: rgba(0, 0, 0, 1)">_SUCCESS</span>-rw-r--r--<span style="color: rgba(128, 0, 128, 1)">1</span> root supergroup<span style="color: rgba(128, 0, 128, 1)">89</span><span style="color: rgba(128, 0, 128, 1)">2022</span>-<span style="color: rgba(128, 0, 128, 1)">05</span>-<span style="color: rgba(128, 0, 128, 1)">01</span><span style="color: rgba(128, 0, 128, 1)">05</span>:<span style="color: rgba(128, 0, 128, 1)">00</span> /mroutput/part-<span style="color: rgba(128, 0, 128, 1)">00000</span></pre> </div> <p>查看part-00000内容</p> <div class="cnblogs_code"> <pre>[root@localhost lib]# hadoop fs -<span style="color: rgba(0, 0, 255, 1)">cat</span> /mroutput/part-<span style="color: rgba(128, 0, 128, 1)">00000</span><span style="color: rgba(0, 0, 0, 1)">  {</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">beijing</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 128, 1)">2</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">capital</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 128, 1)">1</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">china</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 128, 1)">2</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">i</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 128, 1)">2</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">is</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 128, 1)">1</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">love</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 128, 1)">2</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">of</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 128, 1)">1</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">the</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 128, 1)">1</span>}</pre> </div> <p>可以看到python模式的Hadoop Streaming已经执行成功。</p> </div> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-34399.htm">动物诊所英文翻译（动物诊所英文翻译怎么说）</a></p>
+                                        <p>下一个：<a href="/news/article-34876.htm">开一家宠物店需要投资多少（开一家宠物店投资多少钱）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-33927.htm" title="深圳宠物领养救助站（深圳宠物领养救助站在哪里）">深圳宠物领养救助站（深圳宠物领养救助站在哪里）</a></li>
+                        <li class="py-2"><a href="/news/article-22680.htm" title="kafka开机自启动配置">kafka开机自启动配置</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-6-node-share.htm" title="Matsuri Node节点订阅每天更新19.9M/S免费节点订阅链接">Matsuri Node节点订阅每天更新19.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-29639.htm" title="Vue利用js实现点击菜单导航栏实现平滑滚动定位">Vue利用js实现点击菜单导航栏实现平滑滚动定位</a></li>
+                        <li class="py-2"><a href="/news/article-31441.htm" title="Tomcat 部署 Web项目以及更改项目名">Tomcat 部署 Web项目以及更改项目名</a></li>
+                        <li class="py-2"><a href="/news/article-21305.htm" title="58同城泰迪狗300元（泰迪犬58同城）">58同城泰迪狗300元（泰迪犬58同城）</a></li>
+                        <li class="py-2"><a href="/news/article-34876.htm" title="开一家宠物店需要投资多少（开一家宠物店投资多少钱）">开一家宠物店需要投资多少（开一家宠物店投资多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-27771.htm" title="Spring 源码（2）Spring IOC 容器 前戏准备工作">Spring 源码（2）Spring IOC 容器 前戏准备工作</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-free-high-speed-nodes.htm" title="Matsuri Node节点订阅每天更新22.1M/S免费节点订阅链接">Matsuri Node节点订阅每天更新22.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-23137.htm" title="如何阅读一份源代码">如何阅读一份源代码</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| About End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+    </main>
+        <!-- |==========================================| -->
+    <!-- |=====|| Footer Start ||===============| -->
+    <footer class="footer1">
+        <div class="footer1__bottom">
+            <div class="container_m_30 container_l">
+                <div class="row">
+                    <div class="col-md-12 col_padding">
+                        <div class="footer1__bottom__copyRight text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p><a href="/">Matsuri Node免费机场订阅节点官网</a> 版权所有 Powered by WordPress</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col_padding">
+                        <div class="footer1__bottom__nav text-center text-lg-start">
+                            <a href="#">Customer Support</a>
+                            <a href="#">Terms & Conditions</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col_padding">
+                        <div class="footer1__bottom__social text-center text-lg-end">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- |=====|| Footer End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| ScrollToTop Start ||===============| -->
+    <a href="#" class="scrollToTop">
+        <i class="fas fa-level-up-alt"></i>
+    </a>
+    <!-- |=====|| ScrollToTop End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| All js here ||===============| -->
+    <script src="/assets/website/js/frontend/matsurinode/modernizr-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery-3.6.2.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.nice-select.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.fancybox.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.meanmenu.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/one-page-nav-min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/feather.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+    <!-- |=====|| All js End ||=================| -->
+    <!-- |==========================================| -->
+</body>
+
+</html>
