@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="zh-CN" class="no-js">
+
+<head>
+        <link rel="canonical" href="https://matsurinode.github.io/news/article-42725.htm" />
+    <!-- Required Meta Tags Start -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>常见 几种 git操作代码回退的方法</title>
+        <meta name="description" content="第一种：当你git commit后 没有push 你想回退 这种情况发生在你的本地代码仓库,可能你add ,commit 以后发现代码有点问题,想要从取消 git reset .... 如果是撤销某个" />
+        <link rel="icon" href="/assets/website/img/matsurinode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Matsuri Node免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://matsurinode.github.io/news/article-42725.htm" />
+    <meta property="og:site_name" content="Matsuri Node免费机场订阅节点官网" />
+    <meta property="og:title" content="常见 几种 git操作代码回退的方法" />
+    <meta property="og:image" content="https://matsurinode.github.io/uploads/20241108/36e947c5ed1e5f1d7c9d7aa8a3ebc0c8.webp" />
+        <meta property="og:release_date" content="2025-01-18T07:16:00" />
+    <meta property="og:updated_time" content="2025-01-18T07:16:00" />
+        <meta property="og:description" content="第一种：当你git commit后 没有push 你想回退 这种情况发生在你的本地代码仓库,可能你add ,commit 以后发现代码有点问题,想要从取消 git reset .... 如果是撤销某个" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required Meta Tags End -->
+    <!-- Favicon Tags Start -->
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Favicon Tags End -->
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/main.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMMQHM2EMD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KMMQHM2EMD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Add your site or application content here -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Preloader Start ||===============| -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__wrapper">
+                <div class="preloader__spinner"></div>
+                <div class="preloader__txt">
+                    <span data-text-preloader="M" class="letters-loading">M</span>
+                    <span data-text-preloader="a" class="letters-loading">a</span>
+                    <span data-text-preloader="t" class="letters-loading">t</span>
+                    <span data-text-preloader="s" class="letters-loading">s</span>
+                    <span data-text-preloader="u" class="letters-loading">u</span>
+                    <span data-text-preloader="r" class="letters-loading">r</span>
+                    <span data-text-preloader="i" class="letters-loading">i</span>
+                    <span data-text-preloader=" " class="letters-loading">&nbsp;</span>
+                    <span data-text-preloader="n" class="letters-loading">n</span>
+                    <span data-text-preloader="o" class="letters-loading">o</span>
+                    <span data-text-preloader="d" class="letters-loading">d</span>
+                    <span data-text-preloader="e" class="letters-loading">e</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- |=====|| Preloader End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Header Start ||===============| -->
+    <header class="header home1">
+        <!-- Header Menu Start -->
+        <div class="header__menu">
+            <div class="header__menu-wrapper">
+                <div class="container_xl_fluid">
+                    <div class="header__menu-outer">
+                        <div class="row">
+                            <div class="col-xxl-3 col-lg-4">
+                                <div class="header__logo">
+                                    <a href="/">
+                                                                            <span>Matsuri Node</span>
+                                                                        </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-lg-8">
+                                <div class="main-menu text-xxl-center text-end">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                                                                        <li><a href="/">首页</a></li>
+                                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                                        <li><a href="#">关于</a></li>
+                                            <li><a href="#">联系</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="mobile-menu"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Menu End -->
+    </header>
+    <!-- |=====|| Header End ||=================| -->
+    <!-- |==========================================| -->
+    <main>
+        <!-- |==========================================| -->
+        <!-- |=====|| Page Title Start ||===============| -->
+        <section class="pageTitle1">
+            <div class="pageTitle1__bg pageTitle1__bg__02"></div>
+            <div class="pageTitle1__breadCrumb">
+                <ul>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li><span>正文</span></li>
+                </ul>
+            </div>
+            <div class="pageTitle1__padding">
+                <div class="container_m container_l">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="pageTitle1__heading">
+                                <h1>常见 几种 git操作代码回退的方法</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| Page Title End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |=====|| About Start ||===============| -->
+        <section class="about1 content_box_pot_120">
+            <div class="content_box_pob_120">
+                <div class="container_m container_l content_box_pob_120">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h4><a id="git_commit_push__0" rel="nofollow"></a>第一种：当你git commit后 没有push 你想回退</h4> <p>这种情况发生在你的本地代码仓库,可能你add ,commit 以后发现代码有点问题,想要从取消</p> <p><code>git reset ....</code><br /> 如果是撤销某个文件或文件夹：<br /> 首先使用你德使用git status 查看比提交的状态</p> <h4><a id="push_9" rel="nofollow"></a>第二种：当你push后想要回退代码</h4> <p><code>使用 git revert ....</code></p> <p>首先你得使用 Git log 查看提交历史</p> <h3><a id="1git_log___SHA1__13" rel="nofollow"></a>1.不传入任何参数的默认情况下，git log 会按时间先后顺序列出所有的提交，最近的更新排在最上面。 正如你所看到的，这个命令会列出每个提交的 SHA-1 校验和、作者的名字和电子邮件地址、提交时间以及提交说明。</h3> <pre><code>git log -p -2</code></pre> <h4><a id="2__2__17" rel="nofollow"></a>2 .你也可以限制显示的日志条目数量，例如使用 -2 选项来只显示最近的两次提交：</h4> <pre><code>git log -p -2</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/fb4fa86c9fccc6a8cdf002dbbf0e9f37.jpg" alt="常见 几种 git操作代码回退的方法"><br /> 回退使用git revert</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/d66f0e37793ed1414dc856d2da409760.jpg" alt="常见 几种 git操作代码回退的方法"><br /><code>使用git revert 回退 他会把提交的东西全部删除，从文件件里面删除。慎用。一般不提倡使用revert</code></p> <p>第一:</p> <p>上面我们说的如果你已经push到线上代码库, reset 删除指定commit以后,你git push可能导致一大堆冲突.但是revert 并不会.</p> <p>第二:</p> <p>如果在日后现有分支和历史分支需要合并的时候,reset 恢复部分的代码依然会出现在历史分支里.但是revert 方向提交的commit 并不会出现在历史分支里.</p> <p>第三:</p> <p>reset 是在正常的commit历史中,删除了指定的commit,这时 HEAD 是向后移动了,而 revert 是在正常的commit历史中再commit一次,只不过是反向提交,他的 HEAD 是一直向前的.</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-42224.htm">被猫抓伤破皮要打针吗超过24小时（被猫抓伤几小时内打针有效）</a></p>
+                                        <p>下一个：<a href="/news/article-42728.htm">宠物粮食店一年利润怎么样啊知乎推广（宠物粮食销售好做吗）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-22680.htm" title="kafka开机自启动配置">kafka开机自启动配置</a></li>
+                        <li class="py-2"><a href="/news/article-24051.htm" title="喵咪驱虫怎么做的（猫驱虫使用方法）">喵咪驱虫怎么做的（猫驱虫使用方法）</a></li>
+                        <li class="py-2"><a href="/news/article-25454.htm" title="使用SpringBoot简单了解Druid的监控系统">使用SpringBoot简单了解Druid的监控系统</a></li>
+                        <li class="py-2"><a href="/news/article-39754.htm" title="我所在的城市有一家宠物医院英语翻译怎么写（在我的城市有一家宠物医院英语怎么说）">我所在的城市有一家宠物医院英语翻译怎么写（在我的城市有一家宠物医院英语怎么说）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-free-subscribe-node.htm" title="Matsuri Node节点订阅每天更新21.3M/S免费节点订阅链接">Matsuri Node节点订阅每天更新21.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-free-high-speed-nodes.htm" title="Matsuri Node节点订阅每天更新19.7M/S免费节点订阅链接">Matsuri Node节点订阅每天更新19.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-21304.htm" title="动物打完疫苗可以洗澡吗冬天（动物打完疫苗可以洗澡吗冬天会感冒吗）">动物打完疫苗可以洗澡吗冬天（动物打完疫苗可以洗澡吗冬天会感冒吗）</a></li>
+                        <li class="py-2"><a href="/news/article-37713.htm" title="养猫的人容易得什么（养猫的人容易得什么精神病）">养猫的人容易得什么（养猫的人容易得什么精神病）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-9-free-high-speed-nodes.htm" title="Matsuri Node节点订阅每天更新22.5M/S免费节点订阅链接">Matsuri Node节点订阅每天更新22.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-20-free-node-subscribe.htm" title="Matsuri Node节点订阅每天更新22M/S免费节点订阅链接">Matsuri Node节点订阅每天更新22M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| About End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+    </main>
+        <!-- |==========================================| -->
+    <!-- |=====|| Footer Start ||===============| -->
+    <footer class="footer1">
+        <div class="footer1__bottom">
+            <div class="container_m_30 container_l">
+                <div class="row">
+                    <div class="col-md-12 col_padding">
+                        <div class="footer1__bottom__copyRight text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p><a href="/">Matsuri Node免费机场订阅节点官网</a> 版权所有 Powered by WordPress</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col_padding">
+                        <div class="footer1__bottom__nav text-center text-lg-start">
+                            <a href="#">Customer Support</a>
+                            <a href="#">Terms & Conditions</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col_padding">
+                        <div class="footer1__bottom__social text-center text-lg-end">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- |=====|| Footer End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| ScrollToTop Start ||===============| -->
+    <a href="#" class="scrollToTop">
+        <i class="fas fa-level-up-alt"></i>
+    </a>
+    <!-- |=====|| ScrollToTop End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| All js here ||===============| -->
+    <script src="/assets/website/js/frontend/matsurinode/modernizr-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery-3.6.2.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.nice-select.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.fancybox.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.meanmenu.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/one-page-nav-min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/feather.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+    <!-- |=====|| All js End ||=================| -->
+    <!-- |==========================================| -->
+</body>
+
+</html>
