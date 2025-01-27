@@ -1,0 +1,296 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN" class="no-js">
+
+<head>
+        <link rel="canonical" href="https://matsurinode.github.io/news/article-45203.htm" />
+    <!-- Required Meta Tags Start -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>linux 硬盘满了如何处理</title>
+        <meta name="description" content="事件源于在服务器运行一个脚本程序… 好好的脚本突然报错,还以为脚本出现问题了。细看报错原因(具体报错信息已经忘记了)，是没有可用空间。从没遇见过这个情况，怎么办呢？ 一、确定是不是真的是磁盘空间不足 " />
+        <link rel="icon" href="/assets/website/img/matsurinode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Matsuri Node免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://matsurinode.github.io/news/article-45203.htm" />
+    <meta property="og:site_name" content="Matsuri Node免费机场订阅节点官网" />
+    <meta property="og:title" content="linux 硬盘满了如何处理" />
+    <meta property="og:image" content="https://matsurinode.github.io/uploads/20241108/b80d9203d7495004d5bca88ab4cdc641.webp" />
+        <meta property="og:release_date" content="2025-01-23T10:41:52" />
+    <meta property="og:updated_time" content="2025-01-23T10:41:52" />
+        <meta property="og:description" content="事件源于在服务器运行一个脚本程序… 好好的脚本突然报错,还以为脚本出现问题了。细看报错原因(具体报错信息已经忘记了)，是没有可用空间。从没遇见过这个情况，怎么办呢？ 一、确定是不是真的是磁盘空间不足 " />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required Meta Tags End -->
+    <!-- Favicon Tags Start -->
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Favicon Tags End -->
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="linux 硬盘满了如何处理">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/main.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMMQHM2EMD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KMMQHM2EMD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Add your site or application content here -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Preloader Start ||===============| -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__wrapper">
+                <div class="preloader__spinner"></div>
+                <div class="preloader__txt">
+                    <span data-text-preloader="M" class="letters-loading">M</span>
+                    <span data-text-preloader="a" class="letters-loading">a</span>
+                    <span data-text-preloader="t" class="letters-loading">t</span>
+                    <span data-text-preloader="s" class="letters-loading">s</span>
+                    <span data-text-preloader="u" class="letters-loading">u</span>
+                    <span data-text-preloader="r" class="letters-loading">r</span>
+                    <span data-text-preloader="i" class="letters-loading">i</span>
+                    <span data-text-preloader=" " class="letters-loading">&nbsp;</span>
+                    <span data-text-preloader="n" class="letters-loading">n</span>
+                    <span data-text-preloader="o" class="letters-loading">o</span>
+                    <span data-text-preloader="d" class="letters-loading">d</span>
+                    <span data-text-preloader="e" class="letters-loading">e</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- |=====|| Preloader End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Header Start ||===============| -->
+    <header class="header home1">
+        <!-- Header Menu Start -->
+        <div class="header__menu">
+            <div class="header__menu-wrapper">
+                <div class="container_xl_fluid">
+                    <div class="header__menu-outer">
+                        <div class="row">
+                            <div class="col-xxl-3 col-lg-4">
+                                <div class="header__logo">
+                                    <a href="/">
+                                                                            <span>Matsuri Node</span>
+                                                                        </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-lg-8">
+                                <div class="main-menu text-xxl-center text-end">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                                                                        <li><a href="/">首页</a></li>
+                                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                                        <li><a href="#">关于</a></li>
+                                            <li><a href="#">联系</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="mobile-menu"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Menu End -->
+    </header>
+    <!-- |=====|| Header End ||=================| -->
+    <!-- |==========================================| -->
+    <main>
+        <!-- |==========================================| -->
+        <!-- |=====|| Page Title Start ||===============| -->
+        <section class="pageTitle1">
+            <div class="pageTitle1__bg pageTitle1__bg__02"></div>
+            <div class="pageTitle1__breadCrumb">
+                <ul>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li><span>正文</span></li>
+                </ul>
+            </div>
+            <div class="pageTitle1__padding">
+                <div class="container_m container_l">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="pageTitle1__heading">
+                                <h1>linux 硬盘满了如何处理</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| Page Title End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |=====|| About Start ||===============| -->
+        <section class="about1 content_box_pot_120">
+            <div class="content_box_pob_120">
+                <div class="container_m container_l content_box_pob_120">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>事件源于在服务器运行一个脚本程序…</p> <p>好好的脚本突然报错,还以为脚本出现问题了。细看报错原因(具体报错信息已经忘记了)，是没有可用空间。从没遇见过这个情况，怎么办呢？</p> <p>一、确定是不是真的是磁盘空间不足</p> <p>输入命令：df –lh 查看磁盘信息</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/5c4fc8a4606c09f3ebb51d321e13245f.jpg" alt="linux 硬盘满了如何处理"></p> <p>很明显：Filesystem下的挂载点 /dev/xvda1 下的40G容量已经耗尽。</p> <p>既然问题已经确定了，接下来就是处理了。</p> <p>处理方法也很简单，就是删文件。</p> <p>问：删除什么文件？</p> <p>答：删除占用磁盘空间大，但又无用的文件。</p> <p>问：什么是无用的文件？</p> <p>答：如果对系统不熟悉的话，日志可能是你第一的下手目标。</p> <p>二、如何定位最大文件目录</p> <p>输入命令： cd / 进入根目录。</p> <p>输入命令：du -h max-depth=1 寻找当前目录，哪个文件夹占用空间最大</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/a5f112d7b6d8855c72579935c77f1a12.jpg" alt="linux 硬盘满了如何处理"></p> <p>以上两个命令之后，可以看到 /usr 此路径占用较大磁盘空间，占用了21G。眼尖的同学可能看到了最后一项显示24G，它表示当前目录所有文件占用磁盘空间总和容量是24G。</p> <p>如法炮制，几番判断后，定位到tomcat的日志文件。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/7c6acfd28ab698088320f7be08371538.jpg" alt="linux 硬盘满了如何处理"></p> <p>由上图可以判断，17G文件在当前目录(tomcat日志目录)文件中。</p> <p>三、如何定位最大文件</p> <p>输入命令：ls –lhS 将文件以从大到小顺序展现</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/22357c94998ca066cde67719f26899b1.jpg" alt="linux 硬盘满了如何处理"></p> <p>最终定位文件为：catalina.out 这个日志文件。</p> <p>四、确认文件未被占用</p> <p>删除文件谁都会：rm –f catalina.out 但是，最好确认下是否要下载下来让开发人员分析日志。</p> <p>辛苦一阵找到文件，删除了很开心，输入命令：df –lh 发现磁盘空间仍是满的状态。跟图一完全没有区别。难道说是需要重启系统吗？linux会这么不友好么？</p> <p>谷歌一下，发现了这么一段话：</p> <p>在Linux或者Unix系统中，通过rm或者文件管理器删除文件将会从文件系统的目录结构上解除链接(unlink).然而如果文件是被打开的（有一个进程正在使用），那么进程将仍然可以读取该文件，磁盘空间也一直被占用。</p> <p>输入命令：/usr/sbin/lsof|grep deleted 确认删除文件是否被占用</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/4f3dd48105bb145ab6083bf22b80301f.jpg" alt="linux 硬盘满了如何处理"></p> <p>确实被占用。根据第二列提供的pid，输入命令：kill -9 13117 杀掉进程。</p> <p>再次输入命令：df –lh</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/62caaab8e60257ae00be35da3857c0ea.jpg" alt="linux 硬盘满了如何处理"></p> <p>如图，磁盘空间被释放了。问题顺利处理了。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-44687.htm">Azure DevOps (八) 通过流水线编译Docker镜像</a></p>
+                                        <p>下一个：<a href="/news/article-45204.htm">动物疫苗厂家有哪些品牌生产 动物疫苗厂家有哪些品牌生产的</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-21776.htm" title="动物疫苗厂家排名前十名（动物疫苗厂家排名前十名是哪些）">动物疫苗厂家排名前十名（动物疫苗厂家排名前十名是哪些）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-28-node-share.htm" title="Matsuri Node节点订阅每天更新18.6M/S免费节点订阅链接">Matsuri Node节点订阅每天更新18.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-30056.htm" title="给猫打狂犬疫苗去哪里（给猫打狂犬疫苗在哪个部位打）">给猫打狂犬疫苗去哪里（给猫打狂犬疫苗在哪个部位打）</a></li>
+                        <li class="py-2"><a href="/news/article-34398.htm" title="关于Jeecg uniapp 使用 mescroll 无法上拉加载">关于Jeecg uniapp 使用 mescroll 无法上拉加载</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-21-free-node-subscribe-links.htm" title="Matsuri Node节点订阅每天更新22.9M/S免费节点订阅链接">Matsuri Node节点订阅每天更新22.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-25456.htm" title="动物疫苗赚钱吗知乎（做动物疫苗前景）">动物疫苗赚钱吗知乎（做动物疫苗前景）</a></li>
+                        <li class="py-2"><a href="/news/article-19471.htm" title="Halo 开源项目学习实体类与数据表">Halo 开源项目学习实体类与数据表</a></li>
+                        <li class="py-2"><a href="/news/article-46182.htm" title="动物疫苗接种方法及注意事项有哪些内容呢 动物疫苗接种方法及注意事项有哪些内容呢图片">动物疫苗接种方法及注意事项有哪些内容呢 动物疫苗接种方法及注意事项有哪些内容呢图片</a></li>
+                        <li class="py-2"><a href="/news/article-39754.htm" title="我所在的城市有一家宠物医院英语翻译怎么写（在我的城市有一家宠物医院英语怎么说）">我所在的城市有一家宠物医院英语翻译怎么写（在我的城市有一家宠物医院英语怎么说）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-free-subscribe-node.htm" title="Matsuri Node 订阅每天更新18.3M/S，V2ray/SSR/Shadowrocket/Clash免费节点订阅链接">Matsuri Node 订阅每天更新18.3M/S，V2ray/SSR/Shadowrocket/Clash免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| About End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+    </main>
+        <!-- |==========================================| -->
+    <!-- |=====|| Footer Start ||===============| -->
+    <footer class="footer1">
+        <div class="footer1__bottom">
+            <div class="container_m_30 container_l">
+                <div class="row">
+                    <div class="col-md-12 col_padding">
+                        <div class="footer1__bottom__copyRight text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p><a href="/">Matsuri Node免费机场订阅节点官网</a> 版权所有 Powered by WordPress</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col_padding">
+                        <div class="footer1__bottom__nav text-center text-lg-start">
+                            <a href="#">Customer Support</a>
+                            <a href="#">Terms & Conditions</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col_padding">
+                        <div class="footer1__bottom__social text-center text-lg-end">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- |=====|| Footer End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| ScrollToTop Start ||===============| -->
+    <a href="#" class="scrollToTop">
+        <i class="fas fa-level-up-alt"></i>
+    </a>
+    <!-- |=====|| ScrollToTop End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| All js here ||===============| -->
+    <script src="/assets/website/js/frontend/matsurinode/modernizr-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery-3.6.2.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.nice-select.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.fancybox.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.meanmenu.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/one-page-nav-min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/feather.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+    <!-- |=====|| All js End ||=================| -->
+    <!-- |==========================================| -->
+</body>
+
+</html>
