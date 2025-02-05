@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN" class="no-js">
+<html xml:lang="zh-CN" lang="zh-CN" class="no-js">
 
 <head>
         <link rel="canonical" href="https://matsurinode.github.io/news/article-41226.htm" />
@@ -9,12 +9,40 @@
     <title>SpringSecurity核心过滤器-CsrfFilter</title>
         <meta name="description" content="  Spring Security除了认证授权外功能外，还提供了安全防护功能。本文我们来介绍下SpringSecurity中是如何阻止CSRF攻击的。    跨站请求伪造（英语：Cross-site " />
         <link rel="icon" href="/assets/website/img/matsurinode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Matsuri Node免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://matsurinode.github.io/news/article-41226.htm" />
+    <meta property="og:site_name" content="Matsuri Node免费机场订阅节点官网" />
+    <meta property="og:title" content="SpringSecurity核心过滤器-CsrfFilter" />
+    <meta property="og:image" content="https://matsurinode.github.io/uploads/20241108/87e7c4820227c49feefc4f57efcf5942.webp" />
+        <meta property="og:release_date" content="2025-01-15T09:51:21" />
+    <meta property="og:updated_time" content="2025-01-15T09:51:21" />
+        <meta property="og:description" content="  Spring Security除了认证授权外功能外，还提供了安全防护功能。本文我们来介绍下SpringSecurity中是如何阻止CSRF攻击的。    跨站请求伪造（英语：Cross-site " />
+        
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Required Meta Tags End -->
     <!-- Favicon Tags Start -->
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
     <!-- Favicon Tags End -->
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringSecurity核心过滤器-CsrfFilter">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
     <!-- CSS here -->
     <link rel="stylesheet" href="/assets/website/css/matsurinode/bootstrap.css">
     <link rel="stylesheet" href="/assets/website/css/matsurinode/main.css">
@@ -147,16 +175,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-25454.htm" title="使用SpringBoot简单了解Druid的监控系统">使用SpringBoot简单了解Druid的监控系统</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-26-free-node-subscribe.htm" title="Matsuri Node节点订阅每天更新20.7M/S免费节点订阅链接">Matsuri Node节点订阅每天更新20.7M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-5-matsuri-github.htm" title="Matsuri Node 订阅每天更新20.4M/S，V2ray/Clash/SSR/Shadowrocket免费节点订阅链接">Matsuri Node 订阅每天更新20.4M/S，V2ray/Clash/SSR/Shadowrocket免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-27312.htm" title="天津宠物狗领养中心在哪里（天津狗狗领养中心地址）">天津宠物狗领养中心在哪里（天津狗狗领养中心地址）</a></li>
-                        <li class="py-2"><a href="/news/article-21777.htm" title="和田宠物店电话号码 和田宠物店电话号码查询">和田宠物店电话号码 和田宠物店电话号码查询</a></li>
-                        <li class="py-2"><a href="/news/article-30593.htm" title="那些年踩过的Java日期时间的坑">那些年踩过的Java日期时间的坑</a></li>
-                        <li class="py-2"><a href="/news/article-40726.htm" title="领养宠物需要签协议吗合法吗现在（领养狗狗要签协议吗）">领养宠物需要签协议吗合法吗现在（领养狗狗要签协议吗）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-19-node-share-links.htm" title="Matsuri Node节点订阅每天更新19.7M/S免费节点订阅链接">Matsuri Node节点订阅每天更新19.7M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-5-free-node-subscribe.htm" title="Matsuri Node节点订阅每天更新21M/S免费节点订阅链接">Matsuri Node节点订阅每天更新21M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-39231.htm" title="打疫苗的时候能不能吃（打疫苗的时候能不能吃感冒药）">打疫苗的时候能不能吃（打疫苗的时候能不能吃感冒药）</a></li>
+                        <li class="py-2"><a href="/news/article-19933.htm" title="动物医院助理操作规程（动物医院助理考核）">动物医院助理操作规程（动物医院助理考核）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-free-node-subscribe.htm" title="Matsuri Node 订阅每天更新21.9M/S，Shadowrocket/SSR/V2ray/Clash免费节点订阅链接">Matsuri Node 订阅每天更新21.9M/S，Shadowrocket/SSR/V2ray/Clash免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-18-matsuri-node-share.htm" title="Matsuri Node 订阅每天更新19.9M/S，Shadowrocket/V2ray/Clash/SSR免费节点订阅链接">Matsuri Node 订阅每天更新19.9M/S，Shadowrocket/V2ray/Clash/SSR免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-free-high-speed-nodes.htm" title="Matsuri Node节点订阅每天更新19.7M/S免费节点订阅链接">Matsuri Node节点订阅每天更新19.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-41718.htm" title="北京宠物医院排行前十（北京排名第一的宠物医院）">北京宠物医院排行前十（北京排名第一的宠物医院）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-matsuri-node.htm" title="Matsuri Node 订阅每天更新19.1M/S，Clash/Shadowrocket/V2ray/SSR免费节点订阅链接">Matsuri Node 订阅每天更新19.1M/S，Clash/Shadowrocket/V2ray/SSR免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-23-free-high-speed-nodes.htm" title="Matsuri Node节点订阅每天更新20.7M/S免费节点订阅链接">Matsuri Node节点订阅每天更新20.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-11-latest-matsuri-node.htm" title="Matsuri Node 订阅每天更新19M/S，V2ray/Shadowrocket/Clash/SSR免费节点订阅链接">Matsuri Node 订阅每天更新19M/S，V2ray/Shadowrocket/Clash/SSR免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-45714.htm" title="Typescript和 Javascript 区别">Typescript和 Javascript 区别</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-node-share.htm" title="Matsuri Node节点订阅每天更新21.6M/S免费节点订阅链接">Matsuri Node节点订阅每天更新21.6M/S免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -168,7 +196,10 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>

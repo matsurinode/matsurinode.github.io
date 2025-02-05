@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN" class="no-js">
+<html xml:lang="zh-CN" lang="zh-CN" class="no-js">
 
 <head>
         <link rel="canonical" href="https://matsurinode.github.io/news/article-24452.htm" />
@@ -9,12 +9,40 @@
     <title>Redis事务详解</title>
         <meta name="description" content="大家好，我是七淅。 如果你了解过关系型数据库事务的话，相信这篇文章对你来说是很容易理解的了。具体什么是事务我就不说不多了，直接讲 Redis 事务相关的部分。 首先，我们先来看下，Redis 是怎么执" />
         <link rel="icon" href="/assets/website/img/matsurinode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Matsuri Node免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://matsurinode.github.io/news/article-24452.htm" />
+    <meta property="og:site_name" content="Matsuri Node免费机场订阅节点官网" />
+    <meta property="og:title" content="Redis事务详解" />
+    <meta property="og:image" content="https://matsurinode.github.io/uploads/20241108/1cdd9102190365fa0825713c7554d446.webp" />
+        <meta property="og:release_date" content="2024-12-11T09:54:31" />
+    <meta property="og:updated_time" content="2024-12-11T09:54:31" />
+        <meta property="og:description" content="大家好，我是七淅。 如果你了解过关系型数据库事务的话，相信这篇文章对你来说是很容易理解的了。具体什么是事务我就不说不多了，直接讲 Redis 事务相关的部分。 首先，我们先来看下，Redis 是怎么执" />
+        
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Required Meta Tags End -->
     <!-- Favicon Tags Start -->
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
     <!-- Favicon Tags End -->
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Redis事务详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
     <!-- CSS here -->
     <link rel="stylesheet" href="/assets/website/css/matsurinode/bootstrap.css">
     <link rel="stylesheet" href="/assets/website/css/matsurinode/main.css">
@@ -147,16 +175,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-19933.htm" title="动物医院助理操作规程（动物医院助理考核）">动物医院助理操作规程（动物医院助理考核）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-3-matsuri-windows.htm" title="Matsuri Node节点订阅每天更新23M/S免费节点订阅链接">Matsuri Node节点订阅每天更新23M/S免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/news/article-33418.htm" title="动物疫苗质量检验机构（动物疫苗检测找哪个部门）">动物疫苗质量检验机构（动物疫苗检测找哪个部门）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-6-node-share.htm" title="Matsuri Node节点订阅每天更新19.9M/S免费节点订阅链接">Matsuri Node节点订阅每天更新19.9M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-21305.htm" title="58同城泰迪狗300元（泰迪犬58同城）">58同城泰迪狗300元（泰迪犬58同城）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-20-free-node-subscribe.htm" title="Matsuri Node节点订阅每天更新22M/S免费节点订阅链接">Matsuri Node节点订阅每天更新22M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-31441.htm" title="Tomcat 部署 Web项目以及更改项目名">Tomcat 部署 Web项目以及更改项目名</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-25-free-subscribe-node.htm" title="Matsuri Node节点订阅每天更新19.9M/S免费节点订阅链接">Matsuri Node节点订阅每天更新19.9M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-19-node-share-links.htm" title="Matsuri Node节点订阅每天更新19.7M/S免费节点订阅链接">Matsuri Node节点订阅每天更新19.7M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-2-free-node-subscribe.htm" title="Matsuri Node节点订阅每天更新22.2M/S免费节点订阅链接">Matsuri Node节点订阅每天更新22.2M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-26393.htm" title="给我讲一讲宫颈糜烂(宫颈糜烂的真相)">给我讲一讲宫颈糜烂(宫颈糜烂的真相)</a></li>
-                        <li class="py-2"><a href="/news/article-34399.htm" title="动物诊所英文翻译（动物诊所英文翻译怎么说）">动物诊所英文翻译（动物诊所英文翻译怎么说）</a></li>
+                        <li class="py-2"><a href="/news/article-47145.htm" title="动物疫苗价格一览表图片高清大全集 动物疫苗价格一览表图片高清大全集下载">动物疫苗价格一览表图片高清大全集 动物疫苗价格一览表图片高清大全集下载</a></li>
+                        <li class="py-2"><a href="/news/article-24991.htm" title="一个完整的pytorch预训练实现图像分类，模型融合">一个完整的pytorch预训练实现图像分类，模型融合</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-22-node-share-links.htm" title="Matsuri Node节点订阅每天更新20.2M/S免费节点订阅链接">Matsuri Node节点订阅每天更新20.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-48485.htm" title="动物疫苗周期多长时间打一次 动物疫苗周期多长时间打一次好">动物疫苗周期多长时间打一次 动物疫苗周期多长时间打一次好</a></li>
+                        <li class="py-2"><a href="/news/article-38752.htm" title="在Python中使用ibis,impyla,pyhive,pyspark连接Kerberos安全认证的Hive、Impala">在Python中使用ibis,impyla,pyhive,pyspark连接Kerberos安全认证的Hive、Impala</a></li>
+                        <li class="py-2"><a href="/news/article-42728.htm" title="宠物粮食店一年利润怎么样啊知乎推广（宠物粮食销售好做吗）">宠物粮食店一年利润怎么样啊知乎推广（宠物粮食销售好做吗）</a></li>
+                        <li class="py-2"><a href="/news/article-42221.htm" title="重庆宠物领养中心电话号码是多少啊（重庆最大免费宠物领养平台）">重庆宠物领养中心电话号码是多少啊（重庆最大免费宠物领养平台）</a></li>
                     </ul>
     </div>
 </div>
@@ -168,7 +196,10 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
