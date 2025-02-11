@@ -1,0 +1,298 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN" class="no-js">
+
+<head>
+        <link rel="canonical" href="https://matsurinode.github.io/news/article-53884.htm" />
+    <!-- Required Meta Tags Start -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>MySQL连接查询，内连接，外连接，全连接，交叉连接</title>
+        <meta name="description" content="MySQL多表连接查询  1.含义 2.多表连接分类   2.1按sql语言分类 2.2按功能分类   3.多表连接语法   3.1sql92语法 3.2sql99语法   4.练习     当查询中" />
+        <link rel="icon" href="/assets/website/img/matsurinode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Matsuri Node免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://matsurinode.github.io/news/article-53884.htm" />
+    <meta property="og:site_name" content="Matsuri Node免费机场订阅节点官网" />
+    <meta property="og:title" content="MySQL连接查询，内连接，外连接，全连接，交叉连接" />
+    <meta property="og:image" content="https://matsurinode.github.io/uploads/20241108/dd228d44c2049dee5e844172a4648c5e.webp" />
+        <meta property="og:release_date" content="2025-02-09T10:06:10" />
+    <meta property="og:updated_time" content="2025-02-09T10:06:10" />
+        <meta property="og:description" content="MySQL多表连接查询  1.含义 2.多表连接分类   2.1按sql语言分类 2.2按功能分类   3.多表连接语法   3.1sql92语法 3.2sql99语法   4.练习     当查询中" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required Meta Tags End -->
+    <!-- Favicon Tags Start -->
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Favicon Tags End -->
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="MySQL连接查询，内连接，外连接，全连接，交叉连接">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/main.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMMQHM2EMD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KMMQHM2EMD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Add your site or application content here -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Preloader Start ||===============| -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__wrapper">
+                <div class="preloader__spinner"></div>
+                <div class="preloader__txt">
+                    <span data-text-preloader="M" class="letters-loading">M</span>
+                    <span data-text-preloader="a" class="letters-loading">a</span>
+                    <span data-text-preloader="t" class="letters-loading">t</span>
+                    <span data-text-preloader="s" class="letters-loading">s</span>
+                    <span data-text-preloader="u" class="letters-loading">u</span>
+                    <span data-text-preloader="r" class="letters-loading">r</span>
+                    <span data-text-preloader="i" class="letters-loading">i</span>
+                    <span data-text-preloader=" " class="letters-loading">&nbsp;</span>
+                    <span data-text-preloader="n" class="letters-loading">n</span>
+                    <span data-text-preloader="o" class="letters-loading">o</span>
+                    <span data-text-preloader="d" class="letters-loading">d</span>
+                    <span data-text-preloader="e" class="letters-loading">e</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- |=====|| Preloader End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Header Start ||===============| -->
+    <header class="header home1">
+        <!-- Header Menu Start -->
+        <div class="header__menu">
+            <div class="header__menu-wrapper">
+                <div class="container_xl_fluid">
+                    <div class="header__menu-outer">
+                        <div class="row">
+                            <div class="col-xxl-3 col-lg-4">
+                                <div class="header__logo">
+                                    <a href="/">
+                                                                            <span>Matsuri Node</span>
+                                                                        </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-lg-8">
+                                <div class="main-menu text-xxl-center text-end">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                                                                        <li><a href="/">首页</a></li>
+                                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                                    </ul>
+                                    </nav>
+                                </div>
+                                <div class="mobile-menu"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Menu End -->
+    </header>
+    <!-- |=====|| Header End ||=================| -->
+    <!-- |==========================================| -->
+    <main>
+        <!-- |==========================================| -->
+        <!-- |=====|| Page Title Start ||===============| -->
+        <section class="pageTitle1">
+            <div class="pageTitle1__bg pageTitle1__bg__02"></div>
+            <div class="pageTitle1__breadCrumb">
+                <ul>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li><span>正文</span></li>
+                </ul>
+            </div>
+            <div class="pageTitle1__padding">
+                <div class="container_m container_l">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="pageTitle1__heading">
+                                <h1>MySQL连接查询，内连接，外连接，全连接，交叉连接</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| Page Title End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |=====|| About Start ||===============| -->
+        <section class="about1 content_box_pot_120">
+            <div class="content_box_pob_120">
+                <div class="container_m container_l content_box_pob_120">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>MySQL多表连接查询</h3> <ul> <li><a href="#1_1" rel="nofollow">1.含义</a></li> <li><a href="#2_9" rel="nofollow">2.多表连接分类</a></li> <li> <ul> <li><a href="#21sql_10" rel="nofollow">2.1按sql语言分类</a></li> <li><a href="#22_15" rel="nofollow">2.2按功能分类</a></li> </ul> </li> <li><a href="#3_28" rel="nofollow">3.多表连接语法</a></li> <li> <ul> <li><a href="#31sql92_29" rel="nofollow">3.1sql92语法</a></li> <li><a href="#32sql99_44" rel="nofollow">3.2sql99语法</a></li> </ul> </li> <li><a href="#4_52" rel="nofollow">4.练习</a></li> </ul> </div> </h1> <blockquote> <p>当查询中涉及到多个表的字段，需要使用多表查询<br /> select 字段1，字段2…<br /> from 表1，表2…</p> </blockquote> <blockquote> <p>笛卡尔积：当查询多个表时，没有添加有效的连接条件，导致多个表所有行实现完全连接</p> </blockquote> </h1> <h2><a id="21sql_10" rel="nofollow"></a>2.1按sql语言分类</h2> <blockquote> <p>sql92标准：仅仅支持内连接</p> </blockquote> <blockquote> <p>sql99标准：支持内连接+外连接（左外+右外）+交叉连接</p> </blockquote> <h2><a id="22_15" rel="nofollow"></a>2.2按功能分类</h2> <blockquote> <p>内连接：<br /> 1.等值连接 （sql99 inner join，sql92 where A.key=B.key）<br /> 2.非等值连接<br /> 3.自连接</p> </blockquote> <blockquote> <p>外连接:<br /> 1.左外连接 left join<br /> 2.右外连接 right join<br /> 3.全外连接 full join</p> </blockquote> <blockquote> <p>交叉连接（sql99语法的笛卡尔乘积） cross join</p> </blockquote> </h1> <h2><a id="31sql92_29" rel="nofollow"></a>3.1sql92语法</h2> <blockquote> <p>select 查询列表<br /> from 表1,表2<br /> where 连接条件（表1.key=表2.key）<br /> group by分组条件<br /> having 分组后的筛选<br /> order by 排序<br /> limit m,n; 排序后取从m行开始取值，取n行</p> </blockquote> <blockquote> <p><strong>注意连接条件：</strong><br /> 等值连接 ： where 表1.key=表2.key<br /> 非等值连接: where 非等值连接条件<br /> 自连接: where 自连接条件<br /><em><strong>说明:<br /> 自连接指的是同一个表的自连接</strong></em></p> </blockquote> <h2><a id="32sql99_44" rel="nofollow"></a>3.2sql99语法</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221113/2c69ffc65f16605714917c73b2f1cc4e.jpg" alt="MySQL连接查询，内连接，外连接，全连接，交叉连接"></p> <blockquote> <p>交叉连接（sql99版的笛卡尔积）<br /> 语法：<br /> select 查询列表<br /> from 表A cross join 表B</p> </blockquote> </h1> <p>1.内连接<br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.nowcoder.com/activity/oj"  rel="nofollow">牛客网mysql在线编程第四题</a></p> <blockquote> <p>查找所有已经分配部门的员工的last_name和first_name以及dept_no(请注意输出描述里各个列的前后顺序)<br /> CREATE TABLE<code>dept_emp</code> (<br /><code>emp_no</code> int(11) NOT NULL,<br /><code>dept_no</code> char(4) NOT NULL,<br /><code>from_date</code> date NOT NULL,<br /><code>to_date</code> date NOT NULL,<br /> PRIMARY KEY (<code>emp_no</code>,<code>dept_no</code>));<br /> CREATE TABLE<code>employees</code> (<br /><code>emp_no</code> int(11) NOT NULL,<br /><code>birth_date</code> date NOT NULL,<br /><code>first_name</code> varchar(14) NOT NULL,<br /><code>last_name</code> varchar(16) NOT NULL,<br /><code>gender</code> char(1) NOT NULL,<br /><code>hire_date</code> date NOT NULL,<br /> PRIMARY KEY (<code>emp_no</code>));</p> </blockquote> <p>sql92参考示例：</p> <blockquote> <p>select e.last_name,e.first_name,d.dept_no<br /> from dept_emp as d,employees as e<br /> where e.emp_no=d.emp_no;</p> </blockquote> <p>sql99参考示例：</p> <blockquote> <p>select e.last_name,e.first_name,d.dept_no<br /> from dept_emp as d inner join employees as e<br /> on e.emp_no=d.emp_no;</p> </blockquote> <p>2.外连接<br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.nowcoder.com/activity/oj"  rel="nofollow">牛客网mysql在线编程第五题</a></p> <blockquote> <p>查找所有员工的last_name和first_name以及对应部门编号dept_no，也包括暂时没有分配具体部门的员工(请注意输出描述里各个列的前后顺序)<br /> CREATE TABLE<code>dept_emp</code> (<br /><code>emp_no</code> int(11) NOT NULL,<br /><code>dept_no</code> char(4) NOT NULL,<br /><code>from_date</code> date NOT NULL,<br /><code>to_date</code> date NOT NULL,<br /> PRIMARY KEY (<code>emp_no</code>,<code>dept_no</code>));<br /> CREATE TABLE<code>employees</code> (<br /><code>emp_no</code> int(11) NOT NULL,<br /><code>birth_date</code> date NOT NULL,<br /><code>first_name</code> varchar(14) NOT NULL,<br /><code>last_name</code> varchar(16) NOT NULL,<br /><code>gender</code> char(1) NOT NULL,<br /><code>hire_date</code> date NOT NULL,<br /> PRIMARY KEY (<code>emp_no</code>));</p> </blockquote> <p>左外连接参考示例：</p> <blockquote> <p>select e.last_name,e.first_name,d.dept_no<br /> from employees as e<br /> left join dept_emp as d<br /> on e.emp_no=d.emp_no;</p> </blockquote> <p>右外连接参考示例：</p> <blockquote> <p>select e.last_name,e.first_name,d.dept_no<br /> from dept_emp as d<br /> right join employees as e<br /> on e.emp_no=d.emp_no;</p> </blockquote> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-53882.htm">软件的23种设计模式的通俗解释</a></p>
+                                        <p>下一个：<a href="/news/article-54430.htm">时间复杂度与空间复杂度</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-free-subscribe-node.htm" title="Matsuri Node 订阅每天更新18.3M/S，V2ray/SSR/Shadowrocket/Clash免费节点订阅链接">Matsuri Node 订阅每天更新18.3M/S，V2ray/SSR/Shadowrocket/Clash免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24050.htm" title="宠物领养电子协议 宠物领养电子协议具有法律效应吗">宠物领养电子协议 宠物领养电子协议具有法律效应吗</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-7-today-matsuri-node.htm" title="Matsuri Node 订阅每天更新21.6M/S，Clash/Shadowrocket/V2ray/SSR免费节点订阅链接">Matsuri Node 订阅每天更新21.6M/S，Clash/Shadowrocket/V2ray/SSR免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-36294.htm" title="动物防疫站在哪个位置啊 动物防疫站在哪个位置啊图片">动物防疫站在哪个位置啊 动物防疫站在哪个位置啊图片</a></li>
+                        <li class="py-2"><a href="/news/article-29171.htm" title="大连24小时宠物医院在哪（大连宠物医院24小时营业电话号码）">大连24小时宠物医院在哪（大连宠物医院24小时营业电话号码）</a></li>
+                        <li class="py-2"><a href="/news/article-54430.htm" title="时间复杂度与空间复杂度">时间复杂度与空间复杂度</a></li>
+                        <li class="py-2"><a href="/news/article-37280.htm" title="宠福鑫动物医院电话云岗（宠福康宠物医院）">宠福鑫动物医院电话云岗（宠福康宠物医院）</a></li>
+                        <li class="py-2"><a href="/news/article-29639.htm" title="Vue利用js实现点击菜单导航栏实现平滑滚动定位">Vue利用js实现点击菜单导航栏实现平滑滚动定位</a></li>
+                        <li class="py-2"><a href="/news/article-43224.htm" title="和田宠物市场电话 和田宠物市场电话号码">和田宠物市场电话 和田宠物市场电话号码</a></li>
+                        <li class="py-2"><a href="/news/article-37277.htm" title="使用Nginx实现多个Tomcat负载均衡">使用Nginx实现多个Tomcat负载均衡</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">33</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| About End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+    </main>
+        <!-- |==========================================| -->
+    <!-- |=====|| Footer Start ||===============| -->
+    <footer class="footer1">
+        <div class="footer1__bottom">
+            <div class="container_m_30 container_l">
+                <div class="row">
+                    <div class="col-md-12 col_padding">
+                        <div class="footer1__bottom__copyRight text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p><a href="/">Matsuri Node免费机场订阅节点官网</a> 版权所有 Powered by WordPress</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col_padding">
+                        <div class="footer1__bottom__nav text-center text-lg-start">
+                            <a href="#">Customer Support</a>
+                            <a href="#">Terms & Conditions</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col_padding">
+                        <div class="footer1__bottom__social text-center text-lg-end">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- |=====|| Footer End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| ScrollToTop Start ||===============| -->
+    <a href="#" class="scrollToTop">
+        <i class="fas fa-level-up-alt"></i>
+    </a>
+    <!-- |=====|| ScrollToTop End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| All js here ||===============| -->
+    <script src="/assets/website/js/frontend/matsurinode/modernizr-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery-3.6.2.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.nice-select.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.fancybox.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.meanmenu.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/one-page-nav-min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/feather.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+    <!-- |=====|| All js End ||=================| -->
+    <!-- |==========================================| -->
+</body>
+
+</html>
