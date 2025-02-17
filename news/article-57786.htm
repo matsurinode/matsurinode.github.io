@@ -1,0 +1,298 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN" class="no-js">
+
+<head>
+        <link rel="canonical" href="https://matsurinode.github.io/news/article-57786.htm" />
+    <!-- Required Meta Tags Start -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Python学习 3 &#8211; while 循环语句</title>
+        <meta name="description" content="个人学习总结笔记如有不足和错误欢迎指教谢谢 while 语句 和 if 语句差不多 在while 后面加上所需的循环条件用 “ : ”作为结尾，当条件满足时就运行while下面的程序块直到while后" />
+        <link rel="icon" href="/assets/website/img/matsurinode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Matsuri Node免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://matsurinode.github.io/news/article-57786.htm" />
+    <meta property="og:site_name" content="Matsuri Node免费机场订阅节点官网" />
+    <meta property="og:title" content="Python学习 3 &#8211; while 循环语句" />
+    <meta property="og:image" content="https://matsurinode.github.io/uploads/20241108/36e947c5ed1e5f1d7c9d7aa8a3ebc0c8.webp" />
+        <meta property="og:release_date" content="2025-02-16T07:22:47" />
+    <meta property="og:updated_time" content="2025-02-16T07:22:47" />
+        <meta property="og:description" content="个人学习总结笔记如有不足和错误欢迎指教谢谢 while 语句 和 if 语句差不多 在while 后面加上所需的循环条件用 “ : ”作为结尾，当条件满足时就运行while下面的程序块直到while后" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required Meta Tags End -->
+    <!-- Favicon Tags Start -->
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Favicon Tags End -->
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Python学习 3 &#8211; while 循环语句">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/main.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMMQHM2EMD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KMMQHM2EMD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Add your site or application content here -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Preloader Start ||===============| -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__wrapper">
+                <div class="preloader__spinner"></div>
+                <div class="preloader__txt">
+                    <span data-text-preloader="M" class="letters-loading">M</span>
+                    <span data-text-preloader="a" class="letters-loading">a</span>
+                    <span data-text-preloader="t" class="letters-loading">t</span>
+                    <span data-text-preloader="s" class="letters-loading">s</span>
+                    <span data-text-preloader="u" class="letters-loading">u</span>
+                    <span data-text-preloader="r" class="letters-loading">r</span>
+                    <span data-text-preloader="i" class="letters-loading">i</span>
+                    <span data-text-preloader=" " class="letters-loading">&nbsp;</span>
+                    <span data-text-preloader="n" class="letters-loading">n</span>
+                    <span data-text-preloader="o" class="letters-loading">o</span>
+                    <span data-text-preloader="d" class="letters-loading">d</span>
+                    <span data-text-preloader="e" class="letters-loading">e</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- |=====|| Preloader End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Header Start ||===============| -->
+    <header class="header home1">
+        <!-- Header Menu Start -->
+        <div class="header__menu">
+            <div class="header__menu-wrapper">
+                <div class="container_xl_fluid">
+                    <div class="header__menu-outer">
+                        <div class="row">
+                            <div class="col-xxl-3 col-lg-4">
+                                <div class="header__logo">
+                                    <a href="/">
+                                                                            <span>Matsuri Node</span>
+                                                                        </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-lg-8">
+                                <div class="main-menu text-xxl-center text-end">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                                                                        <li><a href="/">首页</a></li>
+                                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                                    </ul>
+                                    </nav>
+                                </div>
+                                <div class="mobile-menu"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Menu End -->
+    </header>
+    <!-- |=====|| Header End ||=================| -->
+    <!-- |==========================================| -->
+    <main>
+        <!-- |==========================================| -->
+        <!-- |=====|| Page Title Start ||===============| -->
+        <section class="pageTitle1">
+            <div class="pageTitle1__bg pageTitle1__bg__02"></div>
+            <div class="pageTitle1__breadCrumb">
+                <ul>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li><span>正文</span></li>
+                </ul>
+            </div>
+            <div class="pageTitle1__padding">
+                <div class="container_m container_l">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="pageTitle1__heading">
+                                <h1>Python学习 3 &#8211; while 循环语句</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| Page Title End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |=====|| About Start ||===============| -->
+        <section class="about1 content_box_pot_120">
+            <div class="content_box_pob_120">
+                <div class="container_m container_l content_box_pob_120">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>个人学习总结笔记如有不足和错误欢迎指教谢谢</p> <p>while 语句 和 if 语句差不多</p> <p>在while 后面加上所需的循环条件用 “ : ”作为结尾，当条件满足时就运行while下面的程序块直到while后面的条件不再被满足，程序会跳出while语句继续往下运行，大概有以下几种：</p> <p>while基本循环</p> <p>while …… continue 语句</p> <p>while ……break语句</p> <p>while ……else语句</p> <p>1、while 基本循环：满足条件就开始循环，条件无法满足就跳出</p> <p>例如：</p> <p>显示1到100所有的数字</p> <pre><code class="language-python">shuZi = 0 #定义变量名称“ shuZi ”并且给它赋值为 0 while shuZi &lt; 100 : #设置循环条件是 shuZi 的值小于100     shuZi = shuZi + 1 #shuZi 的值加 1      print(shuZi) #把shuZi 的值显示出来      ''' 显示1到100有所的数字 '''</code></pre> <p>2、while …… continue 语句：等运行至continue时终止当前循环开始下一次循环</p> <p>例如：</p> <p>显示1 2 3 4 5 6 8 9 10（不显示7）</p> <pre><code class="language-python">shuZi = 0 #定义变量 shuZi 并赋值为 0 while shuZi &lt; 10 : #设置循环条件是 shuZi 小于 10     shuZi = shuZi + 1 #shuZi的赋值 + 1     if shuZi == 7: #设定if判断条件 为 shuZi 的值等于7          continue #以下的代码 就不再执行了 直接跳回到 while开始的地方     else:         print(shuZi) #否则就显示shuZi的值</code></pre> <p>3、while ……break语句：程序运行至break的时候 终止所有循环</p> <p>例如：</p> <p>用户三次登录机会</p> <pre><code class="language-python">yongHuMing = 0  #定义变量 yongHuMing 并赋值为0 miMa = 0    #定义变量 miMa 并赋值为0 x = 3   #定义变量 x 并赋值为0 while x &gt; 0 :  #设置循环条件为 x 大于 0     yongHuMing = input ('请输入用户名：')  #显示 请输入用户名：并且赋值给 yongHuMing     miMa = input ('请输入密码：')     #显示 请输入密码：并且赋值给 miMa         if yongHuMing == 'adam' and miMa == '123' :   #如果 yongHuMing 的值等于adam 并且 miMa的值等于123         print ('登录成功')      #则显示登录成功          break       #退出循环     else:         x = x - 1   #否则 x的值 减1          print ('登录失败请重新登录') #显示登录失败请重新登录</code></pre> <p>4、while ……else语句：如果不再满足循环条件则执行else后的命令</p> <p>例如：</p> <p>显示1-10 这10个数字，最后告知显示完毕</p> <pre><code class="language-python">shuZi = 0 #定义变量名称“ shuZi ”并且给它赋值为 0 while shuZi &lt; 10 :  #设置循环条件是 shuZi 小于 10     shuZi = shuZi + 1 #shuZi 的值加 1      print(shuZi) #把shuZi 的值显示出来 else:           #当shuZi小于10的条件无法满足时     print("全部显示完毕") #显示全部显示完毕</code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-57212.htm">猫咪3针疫苗多少钱 猫咪3针疫苗多少钱一针</a></p>
+                                        <p>下一个：<a href="/news/article-57787.htm">动物疫苗种类及研究进展报告（动物疫苗概念）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-44190.htm" title="免费领养小猫崽剑川县（免费领养小猫小狗）">免费领养小猫崽剑川县（免费领养小猫小狗）</a></li>
+                        <li class="py-2"><a href="/news/article-35790.htm" title="河北农业大学动物医学院电话（河北农业大学动物医学院官网）">河北农业大学动物医学院电话（河北农业大学动物医学院官网）</a></li>
+                        <li class="py-2"><a href="/news/article-21304.htm" title="动物打完疫苗可以洗澡吗冬天（动物打完疫苗可以洗澡吗冬天会感冒吗）">动物打完疫苗可以洗澡吗冬天（动物打完疫苗可以洗澡吗冬天会感冒吗）</a></li>
+                        <li class="py-2"><a href="/news/article-28700.htm" title="springboot嵌入式数据库derby初探">springboot嵌入式数据库derby初探</a></li>
+                        <li class="py-2"><a href="/news/article-43723.htm" title="猫的疫苗不打行不行呢（猫疫苗不打可以吗）">猫的疫苗不打行不行呢（猫疫苗不打可以吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-27-free-high-speed-nodes.htm" title="Matsuri Node节点订阅每天更新22.4M/S免费节点订阅链接">Matsuri Node节点订阅每天更新22.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-14-free-node-subscribe.htm" title="Matsuri Node 订阅每天更新21.4M/S，V2ray/Shadowrocket/Clash/SSR免费节点订阅链接">Matsuri Node 订阅每天更新21.4M/S，V2ray/Shadowrocket/Clash/SSR免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-32018.htm" title="宠物回收平台有哪些好的简单介绍">宠物回收平台有哪些好的简单介绍</a></li>
+                        <li class="py-2"><a href="/news/article-29639.htm" title="Vue利用js实现点击菜单导航栏实现平滑滚动定位">Vue利用js实现点击菜单导航栏实现平滑滚动定位</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-29-today-matsuri-node.htm" title="Matsuri Node 订阅每天更新19.1M/S，Shadowrocket/Clash/V2ray/SSR免费节点订阅链接">Matsuri Node 订阅每天更新19.1M/S，Shadowrocket/Clash/V2ray/SSR免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| About End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+    </main>
+        <!-- |==========================================| -->
+    <!-- |=====|| Footer Start ||===============| -->
+    <footer class="footer1">
+        <div class="footer1__bottom">
+            <div class="container_m_30 container_l">
+                <div class="row">
+                    <div class="col-md-12 col_padding">
+                        <div class="footer1__bottom__copyRight text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p><a href="/">Matsuri Node免费机场订阅节点官网</a> 版权所有 Powered by WordPress</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col_padding">
+                        <div class="footer1__bottom__nav text-center text-lg-start">
+                            <a href="#">Customer Support</a>
+                            <a href="#">Terms & Conditions</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col_padding">
+                        <div class="footer1__bottom__social text-center text-lg-end">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- |=====|| Footer End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| ScrollToTop Start ||===============| -->
+    <a href="#" class="scrollToTop">
+        <i class="fas fa-level-up-alt"></i>
+    </a>
+    <!-- |=====|| ScrollToTop End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| All js here ||===============| -->
+    <script src="/assets/website/js/frontend/matsurinode/modernizr-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery-3.6.2.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.nice-select.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.fancybox.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.meanmenu.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/one-page-nav-min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/feather.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+    <!-- |=====|| All js End ||=================| -->
+    <!-- |==========================================| -->
+</body>
+
+</html>
