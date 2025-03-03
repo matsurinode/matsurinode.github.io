@@ -1,0 +1,298 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN" class="no-js">
+
+<head>
+        <link rel="canonical" href="https://matsurinode.github.io/news/article-66718.htm" />
+    <!-- Required Meta Tags Start -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>vue+eslint+prettier格式化</title>
+        <meta name="description" content="vue项目+eslint自动格式化  背景   手动格式化 命令行指令 vscode设置   自定义校验规则 eslint扩展配置文件   eslint:recommended plugin:vue/" />
+        <link rel="icon" href="/assets/website/img/matsurinode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Matsuri Node免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://matsurinode.github.io/news/article-66718.htm" />
+    <meta property="og:site_name" content="Matsuri Node免费机场订阅节点官网" />
+    <meta property="og:title" content="vue+eslint+prettier格式化" />
+    <meta property="og:image" content="https://matsurinode.github.io/uploads/20241108/3ca46df867e97d8e21d5679a0551a8e9.webp" />
+        <meta property="og:release_date" content="2025-03-03T08:15:12" />
+    <meta property="og:updated_time" content="2025-03-03T08:15:12" />
+        <meta property="og:description" content="vue项目+eslint自动格式化  背景   手动格式化 命令行指令 vscode设置   自定义校验规则 eslint扩展配置文件   eslint:recommended plugin:vue/" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required Meta Tags End -->
+    <!-- Favicon Tags Start -->
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Favicon Tags End -->
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue+eslint+prettier格式化">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/main.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMMQHM2EMD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KMMQHM2EMD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Add your site or application content here -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Preloader Start ||===============| -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__wrapper">
+                <div class="preloader__spinner"></div>
+                <div class="preloader__txt">
+                    <span data-text-preloader="M" class="letters-loading">M</span>
+                    <span data-text-preloader="a" class="letters-loading">a</span>
+                    <span data-text-preloader="t" class="letters-loading">t</span>
+                    <span data-text-preloader="s" class="letters-loading">s</span>
+                    <span data-text-preloader="u" class="letters-loading">u</span>
+                    <span data-text-preloader="r" class="letters-loading">r</span>
+                    <span data-text-preloader="i" class="letters-loading">i</span>
+                    <span data-text-preloader=" " class="letters-loading">&nbsp;</span>
+                    <span data-text-preloader="n" class="letters-loading">n</span>
+                    <span data-text-preloader="o" class="letters-loading">o</span>
+                    <span data-text-preloader="d" class="letters-loading">d</span>
+                    <span data-text-preloader="e" class="letters-loading">e</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- |=====|| Preloader End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Header Start ||===============| -->
+    <header class="header home1">
+        <!-- Header Menu Start -->
+        <div class="header__menu">
+            <div class="header__menu-wrapper">
+                <div class="container_xl_fluid">
+                    <div class="header__menu-outer">
+                        <div class="row">
+                            <div class="col-xxl-3 col-lg-4">
+                                <div class="header__logo">
+                                    <a href="/">
+                                                                            <span>Matsuri Node</span>
+                                                                        </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-lg-8">
+                                <div class="main-menu text-xxl-center text-end">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                                                                        <li><a href="/">首页</a></li>
+                                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                                    </ul>
+                                    </nav>
+                                </div>
+                                <div class="mobile-menu"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Menu End -->
+    </header>
+    <!-- |=====|| Header End ||=================| -->
+    <!-- |==========================================| -->
+    <main>
+        <!-- |==========================================| -->
+        <!-- |=====|| Page Title Start ||===============| -->
+        <section class="pageTitle1">
+            <div class="pageTitle1__bg pageTitle1__bg__02"></div>
+            <div class="pageTitle1__breadCrumb">
+                <ul>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li><span>正文</span></li>
+                </ul>
+            </div>
+            <div class="pageTitle1__padding">
+                <div class="container_m container_l">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="pageTitle1__heading">
+                                <h1>vue+eslint+prettier格式化</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| Page Title End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |=====|| About Start ||===============| -->
+        <section class="about1 content_box_pot_120">
+            <div class="content_box_pob_120">
+                <div class="container_m container_l content_box_pob_120">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>vue项目+eslint自动格式化</h3> <ul> <li><a href="#_1" rel="nofollow">背景</a></li> <li> <ul> <li><a href="#_12" rel="nofollow">手动格式化</a></li> <li><a href="#_14" rel="nofollow">命令行指令</a></li> <li><a href="#vscode_33" rel="nofollow">vscode设置</a></li> </ul> </li> <li><a href="#_46" rel="nofollow">自定义校验规则</a></li> <li><a href="#eslint_68" rel="nofollow">eslint扩展配置文件</a></li> <li> <ul> <li><a href="#eslintrecommended_70" rel="nofollow">eslint:recommended</a></li> <li><a href="#pluginvuevue3essential_73" rel="nofollow">plugin:vue/vue3-essential</a></li> </ul> </li> <li><a href="#_77" rel="nofollow">附录</a></li> </ul> </div> </h1> <p>新建一个 Vue 项目<code>pro_demo</code>并选择自定义模式</p> <pre><code class="prism language-js">vue create pro_demo</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220606/d77ff93e867e0da9632d56b57c04fea9.jpg" alt="vue+eslint+prettier格式化"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220606/6a754d084ca3dc2b12fd71fb7e031212.jpg" alt="vue+eslint+prettier格式化"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220606/538ae9e50868dd2dccf40f64832b46e2.jpg" alt="vue+eslint+prettier格式化"><br /> 现在我们来测试一下代码规范，在<code>Home.vue</code> 文件中<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220606/bd43a09546893a044ae83a97724a15c9.jpg" alt="vue+eslint+prettier格式化"><br /> 有三种方式可以自动格式化这些不符合规范的代码</p> <h2><a id="_12" rel="nofollow"></a>手动格式化</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220606/c1f25d2d50bf78270b107849f08ddb0f.jpg" alt="vue+eslint+prettier格式化"></p> <h2><a id="_14" rel="nofollow"></a>命令行指令</h2> <pre><code class="prism language-js"><span class="token comment">// package.json文件中</span><span class="token string-property property">"scripts"</span><span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token string-property property">"serve"</span><span class="token operator">:</span><span class="token string">"vue-cli-service serve"</span><span class="token punctuation">,</span><span class="token string-property property">"build"</span><span class="token operator">:</span><span class="token string">"vue-cli-service build"</span><span class="token punctuation">,</span><span class="token string-property property">"lint"</span><span class="token operator">:</span><span class="token string">"vue-cli-service lint"</span><span class="token punctuation">,</span><span class="token string-property property">"fix"</span><span class="token operator">:</span><span class="token string">"vue-cli-service lint --fix"</span><span class="token comment">// 新增这一条指令</span><span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre> <p>然后执行命令</p> <pre><code class="prism language-js">npm run fix</code></pre> <p>或者</p> <pre><code class="prism language-js">npm run lint<span class="token operator">--</span>fix</code></pre> <h2><a id="vscode_33" rel="nofollow"></a>vscode设置</h2> <p>如果想要<strong>保存文件的时候就自动执行格式化</strong>操作，需要再vscode的配置首选项里增加下面内容即可</p> <pre><code class="prism language-js"><span class="token comment">// settion.json</span><span class="token string-property property">"editor.codeActionsOnSave"</span><span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token string-property property">"source.fixAll.eslint"</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">}</span></code></pre> <p>配合使用vscode插件</p> <ul> <li>Eslint</li> <li>Prettier</li> </ul> </h1> <p>我们发现此时的校验规则是分号结尾，使用双引号，但是我的个人习惯是不用分号结尾，且使用的是单引号，那如何自定义我们的校验规则呢？</p> <pre><code class="prism language-js"><span class="token comment">// .eslintrc.js</span><span class="token literal-property property">rules</span><span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token string-property property">"no-console"</span><span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span><span class="token operator">===</span><span class="token string">"production"</span><span class="token operator">?</span><span class="token string">"warn"</span><span class="token operator">:</span><span class="token string">"off"</span><span class="token punctuation">,</span><span class="token string-property property">"no-debugger"</span><span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span><span class="token operator">===</span><span class="token string">"production"</span><span class="token operator">?</span><span class="token string">"warn"</span><span class="token operator">:</span><span class="token string">"off"</span><span class="token punctuation">,</span><span class="token comment">// 自定义校验规则</span><span class="token string-property property">"prettier/prettier"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token comment">// 自定义不满足规则的提示，error还是warn</span><span class="token string">'error'</span><span class="token punctuation">,</span><span class="token punctuation">{<!-- --></span><span class="token literal-property property">singleQuote</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token comment">// 使用单引号</span><span class="token literal-property property">semi</span><span class="token operator">:</span><span class="token boolean">false</span><span class="token punctuation">,</span><span class="token comment">// 不使用分号结尾</span><span class="token literal-property property">trailingComma</span><span class="token operator">:</span><span class="token string">'none'</span><span class="token punctuation">,</span><span class="token comment">// 对象后面不默认添加逗号</span><span class="token literal-property property">endOfLine</span><span class="token operator">:</span><span class="token string">'auto'</span><span class="token punctuation">,</span><span class="token comment">// 如果你有报错【Delete `CR` eslint】</span><span class="token literal-property property">arrowParens</span><span class="token operator">:</span><span class="token string">'avoid'</span><span class="token punctuation">,</span><span class="token comment">// 箭头函数只有一个参数时不需要括号</span><span class="token literal-property property">printWidth</span><span class="token operator">:</span><span class="token number">100</span><span class="token comment">// 指定长度换行</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span></code></pre> </h1> <p>一个 ESlint 配置文件，一旦扩展（<code>extends</code>）了就能继承另一个配置文件的所有属性，然后通过 merge 合并/覆盖所有原来的配置</p> <h2><a id="eslintrecommended_70" rel="nofollow"></a>eslint:recommended</h2> <p><code>eslint:recommended</code> 这个扩展包帮我们启用了一系列核心规则，这些规则都是<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://eslint.bootcss.com/docs/rules/"  rel="nofollow">eslint官网推荐的规则的勾选项</a>，如果你想在项目中查看可以去查找对应的包<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220606/56b620cb01cdb890ac9c457e3302ebd2.jpg" alt="vue+eslint+prettier格式化"></p> <h2><a id="pluginvuevue3essential_73" rel="nofollow"></a>plugin:vue/vue3-essential</h2> <p>在<code>node_modules/eslint-plugin-vue</code> 中通过<code>package.json</code> 指定的入口文件<code>"main": "lib/index.js"'</code> 中找到<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220606/9a412b642eaca7b74c5f407db8432852.jpg" alt="vue+eslint+prettier格式化"><br /> 如果你使用的是vue2.x，配置是<code>plugin:vue/essential</code> 那就是对应的<code>essential</code> 文件内容</p> </h1> <p>其他关于<code>ESlint</code> 的配置可以参考<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.verydoc.net/eslint/00003312.html"  rel="nofollow">eslint配置项列表</a>和<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://eslint.cn/docs/user-guide/getting-started"  rel="nofollow">eslint中文官网</a>去查看配置步骤</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-66074.htm">南京宠物领养中心电话（南京领养宠物都要做什么条件）</a></p>
+                                        <p>下一个：<a href="/news/article-66719.htm">襄阳市养狗（襄阳市养犬）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-25-matsuri-node-github.htm" title="Matsuri Node 订阅每天更新18M/S，SSR/V2ray/Clash/Shadowrocket免费节点订阅链接">Matsuri Node 订阅每天更新18M/S，SSR/V2ray/Clash/Shadowrocket免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-node-share.htm" title="Matsuri Node节点订阅每天更新21.6M/S免费节点订阅链接">Matsuri Node节点订阅每天更新21.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-25-matsuri-github.htm" title="Matsuri Node 订阅每天更新20.4M/S，Shadowrocket/V2ray/Clash/SSR免费节点订阅链接">Matsuri Node 订阅每天更新20.4M/S，Shadowrocket/V2ray/Clash/SSR免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-22-free-matsuri-node.htm" title="Matsuri Node 订阅每天更新19.7M/S，SSR/Clash/Shadowrocket/V2ray免费节点订阅链接">Matsuri Node 订阅每天更新19.7M/S，SSR/Clash/Shadowrocket/V2ray免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-28245.htm" title="python提供了9个基本的数值运算操作符_Python学习笔记（三）Python基本数字类型及其简单操作（1）&#8230;">python提供了9个基本的数值运算操作符_Python学习笔记（三）Python基本数字类型及其简单操作（1）&#8230;</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-11-matsuri-node-github.htm" title="Matsuri Node 订阅每天更新19.6M/S，Shadowrocket/SSR/V2ray/Clash免费节点订阅链接">Matsuri Node 订阅每天更新19.6M/S，Shadowrocket/SSR/V2ray/Clash免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-54430.htm" title="时间复杂度与空间复杂度">时间复杂度与空间复杂度</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-5-free-node-subscribe.htm" title="Matsuri Node节点订阅每天更新21M/S免费节点订阅链接">Matsuri Node节点订阅每天更新21M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-40726.htm" title="领养宠物需要签协议吗合法吗现在（领养狗狗要签协议吗）">领养宠物需要签协议吗合法吗现在（领养狗狗要签协议吗）</a></li>
+                        <li class="py-2"><a href="/news/article-45714.htm" title="Typescript和 Javascript 区别">Typescript和 Javascript 区别</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| About End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+    </main>
+        <!-- |==========================================| -->
+    <!-- |=====|| Footer Start ||===============| -->
+    <footer class="footer1">
+        <div class="footer1__bottom">
+            <div class="container_m_30 container_l">
+                <div class="row">
+                    <div class="col-md-12 col_padding">
+                        <div class="footer1__bottom__copyRight text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p><a href="/">Matsuri Node免费机场订阅节点官网</a> 版权所有 Powered by WordPress</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col_padding">
+                        <div class="footer1__bottom__nav text-center text-lg-start">
+                            <a href="#">Customer Support</a>
+                            <a href="#">Terms & Conditions</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col_padding">
+                        <div class="footer1__bottom__social text-center text-lg-end">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- |=====|| Footer End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| ScrollToTop Start ||===============| -->
+    <a href="#" class="scrollToTop">
+        <i class="fas fa-level-up-alt"></i>
+    </a>
+    <!-- |=====|| ScrollToTop End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| All js here ||===============| -->
+    <script src="/assets/website/js/frontend/matsurinode/modernizr-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery-3.6.2.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.nice-select.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.fancybox.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.meanmenu.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/one-page-nav-min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/feather.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+    <!-- |=====|| All js End ||=================| -->
+    <!-- |==========================================| -->
+</body>
+
+</html>
