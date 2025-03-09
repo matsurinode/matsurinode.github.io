@@ -164,6 +164,7 @@
                   				  				  				<h5 id="进程">进程</h5> <p>进程就是<strong>应用程序在内存中分配的空间，也就是正在运行的程序</strong>，各个进程之间互不干扰。同时进程保存着程序每一个时刻运行的状态。进程的两个基本元素是程序代码和与代码关联的数据集。进程执行的任意时刻包含了以下元素：</p> <ul> <li>标识符：与进程相关的唯一标识符，用来区分其他线程</li> <li>状态：若进程正在执行，则进程处于运行态</li> <li>优先级：相对于其他进程的优先顺序</li> <li>程序计数器：程序中即将执行下一条指令的地址</li> <li>内存指针：包括程序代码和进程相关数据的指针</li> <li>上下文数据：进程执行时处理器的寄存器中的数据</li> </ul> <h5 id="线程">线程</h5> <p>现代操作系统调度的最小单元是线程，也叫轻量级进程，在一个线程里可以创建多个线程。进程中拥有一个或多个线程，在线程中有一个程序计数器，用来记录接着要执行哪一条指令。线程拥有寄存器，用来保存线程当前的工作变量，线程还拥有一个堆栈，用来记录执行历史，其中每一帧保存了已调用但是还没有从中返回的过程。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220507/0522ac9cfe8ab4e1f0ddccd48419071e.jpg" alt="并发编程基础底层原理学习_在线工具"></p> <p>上图展示了线程在运行的生命周期中6种不同的状态，在给定的一个时刻，线程只能处于其中的一个状态。</p> <p><strong>进程和线程的区别</strong></p> <p>进程是一个独立的运行环境，而线程是在进程中执行的一个任务。他们两个本质的区别是<strong>是否单独占有内存地址空间及其它系统资源（比如I/O）</strong>：</p> <ul> <li>进程单独占有一定的内存地址空间，所以进程间存在内存隔离，数据是分开的，数据共享复杂但是同步简单，各个进程之间互不干扰；而线程共享所属进程占有的内存地址空间和资源，数据共享简单，但是同步复杂。</li> <li>进程单独占有一定的内存地址空间，一个进程出现问题不会影响其他进程，不影响主程序的稳定性，可靠性高；一个线程崩溃可能影响整个程序的稳定性，可靠性较低。</li> <li>进程单独占有一定的内存地址空间，进程的创建和销毁不仅需要保存寄存器和栈信息，还需要资源的分配回收以及页调度，开销较大；线程只需要保存寄存器和栈信息，开销较小。</li> </ul> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-68642.htm">Blazor 在开发环境保存机密（User Secrets）</a></p>
+                                        <p>下一个：<a href="/news/article-69283.htm">最好的猫粮排行榜前十名（最好的猫粮排行榜前十名巅峰猫粮和倔强嘴巴怎么样）</a></p>
                                     </div>
                                         </div>
                         <div class="col-md-3">
@@ -173,16 +174,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-66718.htm" title="vue+eslint+prettier格式化">vue+eslint+prettier格式化</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-30-matsuri-node-share.htm" title="Matsuri Node 订阅每天更新22.2M/S，SSR/V2ray/Shadowrocket/Clash免费节点订阅链接">Matsuri Node 订阅每天更新22.2M/S，SSR/V2ray/Shadowrocket/Clash免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-60679.htm" title="养狗最忌讳的三个属相是什么（养狗养不活是什么兆头）">养狗最忌讳的三个属相是什么（养狗养不活是什么兆头）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-14-matsuri-node.htm" title="Matsuri Node 订阅每天更新22.6M/S，Clash/V2ray/SSR/Shadowrocket免费节点订阅链接">Matsuri Node 订阅每天更新22.6M/S，Clash/V2ray/SSR/Shadowrocket免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-61249.htm" title="动物打了疫苗了被咬还要***吗多少钱一针（动物打过疫苗被咬还有事啊）">动物打了疫苗了被咬还要***吗多少钱一针（动物打过疫苗被咬还有事啊）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-2-3-node-share.htm" title="Matsuri Node 订阅每天更新18.9M/S，Shadowrocket/Clash/V2ray/SSR免费节点订阅链接">Matsuri Node 订阅每天更新18.9M/S，Shadowrocket/Clash/V2ray/SSR免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-44190.htm" title="免费领养小猫崽剑川县（免费领养小猫小狗）">免费领养小猫崽剑川县（免费领养小猫小狗）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-12-latest-matsuri-node.htm" title="Matsuri Node 订阅每天更新18.7M/S，Clash/SSR/Shadowrocket/V2ray免费节点订阅链接">Matsuri Node 订阅每天更新18.7M/S，Clash/SSR/Shadowrocket/V2ray免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-53882.htm" title="软件的23种设计模式的通俗解释">软件的23种设计模式的通俗解释</a></li>
-                        <li class="py-2"><a href="/news/article-40726.htm" title="领养宠物需要签协议吗合法吗现在（领养狗狗要签协议吗）">领养宠物需要签协议吗合法吗现在（领养狗狗要签协议吗）</a></li>
+                        <li class="py-2"><a href="/news/article-37714.htm" title="宠物粮食加工设备有哪些品牌 宠物粮食加工设备有哪些品牌好">宠物粮食加工设备有哪些品牌 宠物粮食加工设备有哪些品牌好</a></li>
+                        <li class="py-2"><a href="/news/article-47645.htm" title="厦门宠物领养中心电话地址查询（厦门宠物领养中心电话地址查询）">厦门宠物领养中心电话地址查询（厦门宠物领养中心电话地址查询）</a></li>
+                        <li class="py-2"><a href="/news/article-56664.htm" title="58同城猫咪领养西安（西安在哪领养猫）">58同城猫咪领养西安（西安在哪领养猫）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-10-free-subscribe-node.htm" title="Matsuri Node 订阅每天更新18.8M/S，Clash/V2ray/Shadowrocket/SSR免费节点订阅链接">Matsuri Node 订阅每天更新18.8M/S，Clash/V2ray/Shadowrocket/SSR免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-9-free-subscribe-node.htm" title="Matsuri Node 订阅每天更新21.8M/S，Shadowrocket/Clash/V2ray/SSR免费节点订阅链接">Matsuri Node 订阅每天更新21.8M/S，Shadowrocket/Clash/V2ray/SSR免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-17-free-matsuri-node.htm" title="Matsuri Node 订阅每天更新19M/S，SSR/V2ray/Clash/Shadowrocket免费节点订阅链接">Matsuri Node 订阅每天更新19M/S，SSR/V2ray/Clash/Shadowrocket免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-59505.htm" title="宠物领养市场数据图（宠物领养系统国内外现状）">宠物领养市场数据图（宠物领养系统国内外现状）</a></li>
+                        <li class="py-2"><a href="/news/article-40239.htm" title="疫苗包括动物疫苗吗为什么还要打（动物疫苗定义）">疫苗包括动物疫苗吗为什么还要打（动物疫苗定义）</a></li>
+                        <li class="py-2"><a href="/news/article-42221.htm" title="重庆宠物领养中心电话号码是多少啊（重庆最大免费宠物领养平台）">重庆宠物领养中心电话号码是多少啊（重庆最大免费宠物领养平台）</a></li>
+                        <li class="py-2"><a href="/news/article-61840.htm" title="动物疫苗预防控制中心官网电话（动物疫苗厂家电话）">动物疫苗预防控制中心官网电话（动物疫苗厂家电话）</a></li>
                     </ul>
     </div>
 </div>
@@ -194,7 +195,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
