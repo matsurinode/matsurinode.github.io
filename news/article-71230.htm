@@ -1,0 +1,295 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN" class="no-js">
+
+<head>
+        <link rel="canonical" href="https://matsurinode.github.io/news/article-71230.htm" />
+    <!-- Required Meta Tags Start -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>windows C/C++ 实现ini文件读写</title>
+        <meta name="description" content="ini格式稍微来说比较简单为： [Tiatle] 字段1=内容 字段2=内容 内容为纯数字时，可以使用整形（int）方式读取，如果是字符串则需使用字符串（string）读取，部分代码需要用到Windo" />
+        <link rel="icon" href="/assets/website/img/matsurinode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Matsuri Node免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://matsurinode.github.io/news/article-71230.htm" />
+    <meta property="og:site_name" content="Matsuri Node免费机场订阅节点官网" />
+    <meta property="og:title" content="windows C/C++ 实现ini文件读写" />
+    <meta property="og:image" content="https://matsurinode.github.io/uploads/20241108/729376607c15e5b77529f977c54d5bf8.webp" />
+        <meta property="og:release_date" content="2025-03-10T04:37:54" />
+    <meta property="og:updated_time" content="2025-03-10T04:37:54" />
+        <meta property="og:description" content="ini格式稍微来说比较简单为： [Tiatle] 字段1=内容 字段2=内容 内容为纯数字时，可以使用整形（int）方式读取，如果是字符串则需使用字符串（string）读取，部分代码需要用到Windo" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required Meta Tags End -->
+    <!-- Favicon Tags Start -->
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Favicon Tags End -->
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="windows C/C++ 实现ini文件读写">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/main.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMMQHM2EMD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KMMQHM2EMD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Add your site or application content here -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Preloader Start ||===============| -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__wrapper">
+                <div class="preloader__spinner"></div>
+                <div class="preloader__txt">
+                    <span data-text-preloader="M" class="letters-loading">M</span>
+                    <span data-text-preloader="a" class="letters-loading">a</span>
+                    <span data-text-preloader="t" class="letters-loading">t</span>
+                    <span data-text-preloader="s" class="letters-loading">s</span>
+                    <span data-text-preloader="u" class="letters-loading">u</span>
+                    <span data-text-preloader="r" class="letters-loading">r</span>
+                    <span data-text-preloader="i" class="letters-loading">i</span>
+                    <span data-text-preloader=" " class="letters-loading">&nbsp;</span>
+                    <span data-text-preloader="n" class="letters-loading">n</span>
+                    <span data-text-preloader="o" class="letters-loading">o</span>
+                    <span data-text-preloader="d" class="letters-loading">d</span>
+                    <span data-text-preloader="e" class="letters-loading">e</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- |=====|| Preloader End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Header Start ||===============| -->
+    <header class="header home1">
+        <!-- Header Menu Start -->
+        <div class="header__menu">
+            <div class="header__menu-wrapper">
+                <div class="container_xl_fluid">
+                    <div class="header__menu-outer">
+                        <div class="row">
+                            <div class="col-xxl-3 col-lg-4">
+                                <div class="header__logo">
+                                    <a href="/">
+                                                                            <span>Matsuri Node</span>
+                                                                        </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-lg-8">
+                                <div class="main-menu text-xxl-center text-end">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                                                                        <li><a href="/">首页</a></li>
+                                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                                    </ul>
+                                    </nav>
+                                </div>
+                                <div class="mobile-menu"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Menu End -->
+    </header>
+    <!-- |=====|| Header End ||=================| -->
+    <!-- |==========================================| -->
+    <main>
+        <!-- |==========================================| -->
+        <!-- |=====|| Page Title Start ||===============| -->
+        <section class="pageTitle1">
+            <div class="pageTitle1__bg pageTitle1__bg__02"></div>
+            <div class="pageTitle1__breadCrumb">
+                <ul>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li><span>正文</span></li>
+                </ul>
+            </div>
+            <div class="pageTitle1__padding">
+                <div class="container_m container_l">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="pageTitle1__heading">
+                                <h1>windows C/C++ 实现ini文件读写</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| Page Title End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |=====|| About Start ||===============| -->
+        <section class="about1 content_box_pot_120">
+            <div class="content_box_pob_120">
+                <div class="container_m container_l content_box_pob_120">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> </h1> <p>ini格式稍微来说比较简单为：<br /> [Tiatle]<br /> 字段1=内容<br /> 字段2=内容</p> <p>内容为纯数字时，可以使用整形（int）方式读取，如果是字符串则需使用字符串（string）读取，部分代码需要用到Windows API 所以需加上windows.h头文件</p> <h3> <a id="_11" rel="nofollow"></a>使用多字节编码代码如下：</h3> <h5> <a id="1_12" rel="nofollow"></a>1、获取程序路径：</h5> <pre><code class="prism language-cpp"><span class="token comment">//获取程序路径</span> <span class="token keyword">char</span><span class="token operator">*</span> <span class="token function">GetAppPath</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>AppPath<span class="token punctuation">,</span><span class="token keyword">int</span> nSize<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	<span class="token keyword">int</span> i<span class="token punctuation">;</span> 	<span class="token function">memset</span><span class="token punctuation">(</span>AppPath<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>nSize<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token macro property">#<span class="token directive keyword">ifdef</span> UNICODE</span> 	<span class="token function">GetModuleFileNameA</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">,</span>AppPath<span class="token punctuation">,</span>nSize<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token macro property">#<span class="token directive keyword">else</span></span> 	<span class="token function">GetModuleFileName</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">,</span>AppPath<span class="token punctuation">,</span>nSize<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token macro property">#<span class="token directive keyword">endif</span></span> 	<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>AppPath<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">--</span><span class="token punctuation">)</span> 	<span class="token punctuation">{<!-- --></span> 		<span class="token keyword">if</span> <span class="token punctuation">(</span>AppPath<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'\\'</span><span class="token punctuation">)</span> 		<span class="token punctuation">{<!-- --></span> 			<span class="token keyword">break</span><span class="token punctuation">;</span> 		<span class="token punctuation">}</span> 	<span class="token punctuation">}</span> 	AppPath<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 	<span class="token keyword">return</span> AppPath<span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <h5> <a id="2ini_36" rel="nofollow"></a>2、读取和写入ini配置文件：</h5> <pre><code class="prism language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span> <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;windows.h&gt;</span></span>  <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	<span class="token keyword">char</span> app<span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span> 	<span class="token function">GetAppPath</span><span class="token punctuation">(</span>app<span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token keyword">char</span> filepath<span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span> 	<span class="token function">sprintf_s</span><span class="token punctuation">(</span>filepath<span class="token punctuation">,</span><span class="token string">"%s\\ConfigDevice.ini"</span><span class="token punctuation">,</span>app<span class="token punctuation">)</span><span class="token punctuation">;</span>  	<span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span> 	<span class="token keyword">char</span> szTitle<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Title"</span><span class="token punctuation">;</span> 		<span class="token comment">//读取整形数据</span> <span class="token macro property">#<span class="token directive keyword">ifdef</span> UNICODE</span> 		<span class="token keyword">int</span> Number <span class="token operator">=</span> <span class="token function">GetPrivateProfileIntA</span><span class="token punctuation">(</span>szTitle<span class="token punctuation">,</span><span class="token string">"DeviceIndex"</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>filepath<span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token comment">//读取字符串数据</span> 		<span class="token function">GetPrivateProfileStringA</span><span class="token punctuation">(</span>szTitle<span class="token punctuation">,</span><span class="token string">"DeviceName"</span><span class="token punctuation">,</span><span class="token string">"TestData"</span><span class="token punctuation">,</span>buf<span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">,</span>filepath<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token macro property">#<span class="token directive keyword">else</span></span> 		<span class="token keyword">int</span> Number <span class="token operator">=</span> <span class="token function">GetPrivateProfileInt</span><span class="token punctuation">(</span>szTitle<span class="token punctuation">,</span><span class="token string">"DeviceIndex"</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>filepath<span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token function">GetPrivateProfileString</span><span class="token punctuation">(</span>szTitle<span class="token punctuation">,</span><span class="token string">"DeviceName"</span><span class="token punctuation">,</span><span class="token string">"TestData"</span><span class="token punctuation">,</span>buf<span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">,</span>filepath<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token macro property">#<span class="token directive keyword">endif</span></span>   		<span class="token comment">//写入整形数据</span> 		<span class="token keyword">char</span> szTmp<span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 		<span class="token function">sprintf</span><span class="token punctuation">(</span>szTmp<span class="token punctuation">,</span><span class="token string">"%d"</span><span class="token punctuation">,</span>Number<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token macro property">#<span class="token directive keyword">ifdef</span> UNICODE</span> 		<span class="token function">WritePrivateProfileStringA</span><span class="token punctuation">(</span>szTitle<span class="token punctuation">,</span><span class="token string">"DeviceIndex"</span><span class="token punctuation">,</span>szTmp<span class="token punctuation">,</span>filepath<span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token comment">//直接写入字符串数据</span> 		<span class="token function">WritePrivateProfileStringA</span><span class="token punctuation">(</span>szTitle<span class="token punctuation">,</span><span class="token string">"DeviceName"</span><span class="token punctuation">,</span><span class="token string">"WriteData2"</span><span class="token punctuation">,</span>filepath<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token macro property">#<span class="token directive keyword">else</span></span> 		<span class="token function">WritePrivateProfileString</span><span class="token punctuation">(</span>szTitle<span class="token punctuation">,</span><span class="token string">"DeviceIndex"</span><span class="token punctuation">,</span>szTmp<span class="token punctuation">,</span>filepath<span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token function">WritePrivateProfileString</span><span class="token punctuation">(</span>szTitle<span class="token punctuation">,</span><span class="token string">"DeviceName"</span><span class="token punctuation">,</span><span class="token string">"WriteData"</span><span class="token punctuation">,</span>filepath<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token macro property">#<span class="token directive keyword">endif</span></span> <span class="token punctuation">}</span> </code></pre> <p>程序运行结果：<br /> 在运行目录下生成ConfigDevice.ini文件，内容是程序写入的<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230119/4a72b9401a823e961bf906381df025bb.jpg" alt="windows C/C++ 实现ini文件读写"></p> <h3> <a id="Unicode_81" rel="nofollow"></a>使用Unicode字符编码</h3> <pre><code class="prism language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span> <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;windows.h&gt;</span></span>   LPWSTR <span class="token function">toUnicode</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> _str<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	LPWSTR _ret<span class="token punctuation">;</span> 	<span class="token keyword">int</span> _len <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>_str<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>  	_ret <span class="token operator">=</span> <span class="token keyword">new</span> WCHAR<span class="token punctuation">[</span>_len<span class="token punctuation">]</span><span class="token punctuation">;</span>  	<span class="token function">MultiByteToWideChar</span><span class="token punctuation">(</span>CP_ACP<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> _str<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> _ret<span class="token punctuation">,</span> _len<span class="token punctuation">)</span><span class="token punctuation">;</span>  	<span class="token keyword">return</span> _ret<span class="token punctuation">;</span> <span class="token punctuation">}</span>  <span class="token comment">//获取程序路径</span> <span class="token keyword">wchar_t</span><span class="token operator">*</span> <span class="token function">GetAppPath</span><span class="token punctuation">(</span><span class="token keyword">wchar_t</span> <span class="token operator">*</span>AppPath<span class="token punctuation">,</span><span class="token keyword">int</span> nSize<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	<span class="token keyword">int</span> i<span class="token punctuation">;</span> 	<span class="token function">memset</span><span class="token punctuation">(</span>AppPath<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>nSize<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token function">GetModuleFileName</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">,</span>AppPath<span class="token punctuation">,</span>nSize<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token function">wcslen</span><span class="token punctuation">(</span>AppPath<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">--</span><span class="token punctuation">)</span> 	<span class="token punctuation">{<!-- --></span> 		<span class="token keyword">if</span> <span class="token punctuation">(</span>AppPath<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'\\'</span><span class="token punctuation">)</span> 		<span class="token punctuation">{<!-- --></span> 			<span class="token keyword">break</span><span class="token punctuation">;</span> 		<span class="token punctuation">}</span> 	<span class="token punctuation">}</span> 	AppPath<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 	<span class="token keyword">return</span> AppPath<span class="token punctuation">;</span> <span class="token punctuation">}</span>  <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	<span class="token keyword">wchar_t</span> app<span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span> 	<span class="token function">GetAppPath</span><span class="token punctuation">(</span>app<span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token keyword">wchar_t</span> filepath<span class="token punctuation">[</span><span class="token number">512</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span> 	<span class="token function">wsprintf</span><span class="token punctuation">(</span>filepath<span class="token punctuation">,</span><span class="token function">toUnicode</span><span class="token punctuation">(</span><span class="token string">"%s\\ConfigDevice.ini"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>app<span class="token punctuation">)</span><span class="token punctuation">;</span>  	<span class="token keyword">wchar_t</span> buf<span class="token punctuation">[</span><span class="token number">2048</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span> 	<span class="token keyword">wchar_t</span> szTitle<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span> 	<span class="token comment">//memcpy(szTitle,toUnicode("Title"),sizeof("Title"));</span> 	<span class="token function">wcsncpy_s</span><span class="token punctuation">(</span>szTitle<span class="token punctuation">,</span><span class="token function">toUnicode</span><span class="token punctuation">(</span><span class="token string">"Title"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token string">"Title"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token comment">//读取整形数据</span> 	<span class="token keyword">int</span> Number <span class="token operator">=</span> <span class="token function">GetPrivateProfileInt</span><span class="token punctuation">(</span>szTitle<span class="token punctuation">,</span><span class="token function">toUnicode</span><span class="token punctuation">(</span><span class="token string">"DeviceIndex"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>filepath<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token comment">//读取字符串数据</span> 	<span class="token function">GetPrivateProfileString</span><span class="token punctuation">(</span>szTitle<span class="token punctuation">,</span><span class="token function">toUnicode</span><span class="token punctuation">(</span><span class="token string">"DeviceName"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">toUnicode</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span>buf<span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">,</span>filepath<span class="token punctuation">)</span><span class="token punctuation">;</span>  	<span class="token comment">//写入整形数据</span> 	<span class="token keyword">char</span> szTmp<span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 	<span class="token function">sprintf</span><span class="token punctuation">(</span>szTmp<span class="token punctuation">,</span><span class="token string">"%d"</span><span class="token punctuation">,</span>Number<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token function">WritePrivateProfileString</span><span class="token punctuation">(</span>szTitle<span class="token punctuation">,</span><span class="token function">toUnicode</span><span class="token punctuation">(</span><span class="token string">"DeviceIndex"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">toUnicode</span><span class="token punctuation">(</span>szTmp<span class="token punctuation">)</span><span class="token punctuation">,</span>filepath<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token comment">//直接写入字符串数据</span> 	<span class="token function">WritePrivateProfileString</span><span class="token punctuation">(</span>szTitle<span class="token punctuation">,</span><span class="token function">toUnicode</span><span class="token punctuation">(</span><span class="token string">"DeviceName"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">toUnicode</span><span class="token punctuation">(</span><span class="token string">"WriteData"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>filepath<span class="token punctuation">)</span><span class="token punctuation">;</span>  	<span class="token function">wprintf</span><span class="token punctuation">(</span><span class="token function">toUnicode</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-70564.htm">宠物粮食加工厂加盟电话多少啊 宠物粮食加工厂加盟电话多少啊</a></p>
+                                        <p>下一个：<a href="/news/article-71231.htm">一片片枫叶随风飘落好像什么补充句子（一片片枫叶落下来像什么）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-46180.htm" title="动物疫苗预防控制中心官网电话（动物疫苗厂家电话）">动物疫苗预防控制中心官网电话（动物疫苗厂家电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-3-node-share.htm" title="Matsuri Node 订阅每天更新18.9M/S，Shadowrocket/Clash/V2ray/SSR免费节点订阅链接">Matsuri Node 订阅每天更新18.9M/S，Shadowrocket/Clash/V2ray/SSR免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-45715.htm" title="学美容要多大年龄（学美容要多大年龄合适）">学美容要多大年龄（学美容要多大年龄合适）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-26-node-share.htm" title="Matsuri Node 订阅每天更新22.5M/S，SSR/Clash/Shadowrocket/V2ray免费节点订阅链接">Matsuri Node 订阅每天更新22.5M/S，SSR/Clash/Shadowrocket/V2ray免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-36792.htm" title="丹阳宠物免费领养地址（丹阳宠物免费领养地址查询）">丹阳宠物免费领养地址（丹阳宠物免费领养地址查询）</a></li>
+                        <li class="py-2"><a href="/news/article-38754.htm" title="动物疫苗在哪里买比较好呢（动物注射疫苗注射哪里）">动物疫苗在哪里买比较好呢（动物注射疫苗注射哪里）</a></li>
+                        <li class="py-2"><a href="/news/article-58357.htm" title="动物打疫苗在哪打的 动物打疫苗在哪打的啊">动物打疫苗在哪打的 动物打疫苗在哪打的啊</a></li>
+                        <li class="py-2"><a href="/news/article-41227.htm" title="猫咪打疫苗总共需要多少钱一针（猫咪打疫苗总共需要多少钱一针呢）">猫咪打疫苗总共需要多少钱一针（猫咪打疫苗总共需要多少钱一针呢）</a></li>
+                        <li class="py-2"><a href="/news/article-64855.htm" title="Missing URI template variable">Missing URI template variable</a></li>
+                        <li class="py-2"><a href="/news/article-72545.htm" title="动物疫苗的定义和分类有哪些（动物疫苗的概念）">动物疫苗的定义和分类有哪些（动物疫苗的概念）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">36</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| About End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+    </main>
+        <!-- |==========================================| -->
+    <!-- |=====|| Footer Start ||===============| -->
+    <footer class="footer1">
+        <div class="footer1__bottom">
+            <div class="container_m_30 container_l">
+                <div class="row">
+                    <div class="col-md-12 col_padding">
+                        <div class="footer1__bottom__copyRight text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p><a href="/">Matsuri Node免费机场订阅节点官网</a> 版权所有 Powered by WordPress</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col_padding">
+                        <div class="footer1__bottom__nav text-center text-lg-start">
+                            <a href="#">Customer Support</a>
+                            <a href="#">Terms & Conditions</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col_padding">
+                        <div class="footer1__bottom__social text-center text-lg-end">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- |=====|| Footer End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| ScrollToTop Start ||===============| -->
+    <a href="#" class="scrollToTop">
+        <i class="fas fa-level-up-alt"></i>
+    </a>
+    <!-- |=====|| ScrollToTop End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| All js here ||===============| -->
+    <script src="/assets/website/js/frontend/matsurinode/modernizr-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery-3.6.2.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.nice-select.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.fancybox.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.meanmenu.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/one-page-nav-min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/feather.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+    <!-- |=====|| All js End ||=================| -->
+    <!-- |==========================================| -->
+</body>
+
+</html>
