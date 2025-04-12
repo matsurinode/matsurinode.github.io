@@ -1,0 +1,294 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN" class="no-js">
+
+<head>
+        <link rel="canonical" href="https://matsurinode.github.io/news/article-93016.htm" />
+    <!-- Required Meta Tags Start -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>VMware安装虚拟机并配置网络</title>
+        <meta name="description" content="1.下载并安装vmware  2.新建虚拟机并安装设置root密码 --NAT模式  3.查看配置 选择编辑-虚拟网络编辑器-NAT模式-NAT设置 --来查看网关IP（我这是192.168.200." />
+        <link rel="icon" href="/assets/website/img/matsurinode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Matsuri Node免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://matsurinode.github.io/news/article-93016.htm" />
+    <meta property="og:site_name" content="Matsuri Node免费机场订阅节点官网" />
+    <meta property="og:title" content="VMware安装虚拟机并配置网络" />
+    <meta property="og:image" content="https://matsurinode.github.io/uploads/20241108/96beb25ff4d3c8145c7c9e1d94b4dda8.webp" />
+        <meta property="og:release_date" content="2025-04-10T08:20:31" />
+    <meta property="og:updated_time" content="2025-04-10T08:20:31" />
+        <meta property="og:description" content="1.下载并安装vmware  2.新建虚拟机并安装设置root密码 --NAT模式  3.查看配置 选择编辑-虚拟网络编辑器-NAT模式-NAT设置 --来查看网关IP（我这是192.168.200." />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required Meta Tags End -->
+    <!-- Favicon Tags Start -->
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Favicon Tags End -->
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="VMware安装虚拟机并配置网络">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/main.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMMQHM2EMD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KMMQHM2EMD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Add your site or application content here -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Preloader Start ||===============| -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__wrapper">
+                <div class="preloader__spinner"></div>
+                <div class="preloader__txt">
+                    <span data-text-preloader="M" class="letters-loading">M</span>
+                    <span data-text-preloader="a" class="letters-loading">a</span>
+                    <span data-text-preloader="t" class="letters-loading">t</span>
+                    <span data-text-preloader="s" class="letters-loading">s</span>
+                    <span data-text-preloader="u" class="letters-loading">u</span>
+                    <span data-text-preloader="r" class="letters-loading">r</span>
+                    <span data-text-preloader="i" class="letters-loading">i</span>
+                    <span data-text-preloader=" " class="letters-loading">&nbsp;</span>
+                    <span data-text-preloader="n" class="letters-loading">n</span>
+                    <span data-text-preloader="o" class="letters-loading">o</span>
+                    <span data-text-preloader="d" class="letters-loading">d</span>
+                    <span data-text-preloader="e" class="letters-loading">e</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- |=====|| Preloader End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Header Start ||===============| -->
+    <header class="header home1">
+        <!-- Header Menu Start -->
+        <div class="header__menu">
+            <div class="header__menu-wrapper">
+                <div class="container_xl_fluid">
+                    <div class="header__menu-outer">
+                        <div class="row">
+                            <div class="col-xxl-3 col-lg-4">
+                                <div class="header__logo">
+                                    <a href="/">
+                                                                            <span>Matsuri Node</span>
+                                                                        </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-lg-8">
+                                <div class="main-menu text-xxl-center text-end">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                                                                        <li><a href="/">首页</a></li>
+                                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                                    </ul>
+                                    </nav>
+                                </div>
+                                <div class="mobile-menu"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Menu End -->
+    </header>
+    <!-- |=====|| Header End ||=================| -->
+    <!-- |==========================================| -->
+    <main>
+        <!-- |==========================================| -->
+        <!-- |=====|| Page Title Start ||===============| -->
+        <section class="pageTitle1">
+            <div class="pageTitle1__bg pageTitle1__bg__02"></div>
+            <div class="pageTitle1__breadCrumb">
+                <ul>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li><span>正文</span></li>
+                </ul>
+            </div>
+            <div class="pageTitle1__padding">
+                <div class="container_m container_l">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="pageTitle1__heading">
+                                <h1>VMware安装虚拟机并配置网络</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| Page Title End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |=====|| About Start ||===============| -->
+        <section class="about1 content_box_pot_120">
+            <div class="content_box_pob_120">
+                <div class="container_m container_l content_box_pob_120">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <h2> <a id="1vmware_1" rel="nofollow"></a>1.下载并安装vmware</h2> <h2> <a id="2root_NAT_2" rel="nofollow"></a>2.新建虚拟机并安装设置root密码 --NAT模式</h2> <h2> <a id="3_3" rel="nofollow"></a>3.查看配置</h2> <p>选择编辑-虚拟网络编辑器-NAT模式-NAT设置 --来查看网关IP（我这是192.168.200.2）<img decoding="async" src="http://img.555519.xyz/uploads/20230118/90a6d705754ac91799d478b2ae6ba770.jpg" alt="VMware安装虚拟机并配置网络"><img decoding="async" src="http://img.555519.xyz/uploads/20230118/329cad864bda845c4f0255ae3474e646.jpg" alt="VMware安装虚拟机并配置网络"></p> <h2> <a id="4ens33_6" rel="nofollow"></a>4.进入ens33网卡的配置文件</h2> <pre><code class="prism language-xml">vi /etc/sysconfig/network-scripts/ifcfg-ens33 </code></pre> <p>按i键进入输入模式，修改文件中BOOTPROTO字段为static后，后IP就固定为了IPADDR的值</p> <pre><code class="prism language-xml">BOOTPROTO=static #原来值是dhcp，就是动态获取ip的一个协议 </code></pre> <p>增加一下配置（）</p> <pre><code class="prism language-xml">IPADDR=192.168.200.100 # 设置IP -前面三个ip网段与网关一致，最后一个大于网关小于255即可，比如我是100 NETMASK=225.225.225.0 #子网掩码固定格式 GATEWAY=192.168.200.2 #网关 -第三步查出来的网关ip DNS1=8.8.8.8 # DNS服务器地址 </code></pre> <p>按ESC再按：再按wq回车即可保存</p> <h2> <a id="5_22" rel="nofollow"></a>5.重启网络</h2> <pre><code class="prism language-xml">systemctl stop firewalld.service #关闭防火墙 systemctl disable firewalld.service #永久关闭防火墙 systemctl restart network </code></pre> <p>查看ip</p> <pre><code class="prism language-xml">ip addr </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230118/c2d08d4ad34e75c778dd58c898401dda.jpg" alt="VMware安装虚拟机并配置网络"><br /> 完成</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-92296.htm">狗名怎么取比较旺主人（狗名怎么取比较旺主人英文）</a></p>
+                                        <p>下一个：<a href="/news/article-93017.htm">动物疫苗经营许可证图片大全集（经营动物疫苗需要什么资质）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-77954.htm" title="养猫会出现的问题（养猫会有病吗）">养猫会出现的问题（养猫会有病吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-matsuri-windows.htm" title="Matsuri Node 订阅每天更新19.6M/S，V2ray/SSR/Clash/Shadowrocket免费节点订阅链接">Matsuri Node 订阅每天更新19.6M/S，V2ray/SSR/Clash/Shadowrocket免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-71231.htm" title="一片片枫叶随风飘落好像什么补充句子（一片片枫叶落下来像什么）">一片片枫叶随风飘落好像什么补充句子（一片片枫叶落下来像什么）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-23-free-node-subscribe.htm" title="Matsuri Node 订阅每天更新20.6M/S，V2ray/Shadowrocket/SSR/Clash免费节点订阅链接">Matsuri Node 订阅每天更新20.6M/S，V2ray/Shadowrocket/SSR/Clash免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-75901.htm" title="动物疫苗接种时间表图片高清（动物疫苗接种时间表图片高清大图）">动物疫苗接种时间表图片高清（动物疫苗接种时间表图片高清大图）</a></li>
+                        <li class="py-2"><a href="/news/article-86381.htm" title="YARN线上动态资源调优">YARN线上动态资源调优</a></li>
+                        <li class="py-2"><a href="/news/article-77271.htm" title="ASP.NET Core使用EF创建关系模型_实用技巧">ASP.NET Core使用EF创建关系模型_实用技巧</a></li>
+                        <li class="py-2"><a href="/news/article-84234.htm" title="宠物粮食生产厂家有哪些公司 宠物粮食生产厂家有哪些公司名称">宠物粮食生产厂家有哪些公司 宠物粮食生产厂家有哪些公司名称</a></li>
+                        <li class="py-2"><a href="/news/article-66719.htm" title="襄阳市养狗（襄阳市养犬）">襄阳市养狗（襄阳市养犬）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-14-free-high-speed-nodes.htm" title="Matsuri Node 订阅每天更新20.2M/S，SSR/V2ray/Shadowrocket/Clash免费节点订阅链接">Matsuri Node 订阅每天更新20.2M/S，SSR/V2ray/Shadowrocket/Clash免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">36</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| About End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+    </main>
+        <!-- |==========================================| -->
+    <!-- |=====|| Footer Start ||===============| -->
+    <footer class="footer1">
+        <div class="footer1__bottom">
+            <div class="container_m_30 container_l">
+                <div class="row">
+                    <div class="col-md-12 col_padding">
+                        <div class="footer1__bottom__copyRight text-center">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p><a href="/">Matsuri Node免费机场订阅节点官网</a> 版权所有 Powered by WordPress</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col_padding">
+                        <div class="footer1__bottom__nav text-center text-lg-start">
+                            <a href="#">Customer Support</a>
+                            <a href="#">Terms & Conditions</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col_padding">
+                        <div class="footer1__bottom__social text-center text-lg-end">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- |=====|| Footer End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| ScrollToTop Start ||===============| -->
+    <a href="#" class="scrollToTop">
+        <i class="fas fa-level-up-alt"></i>
+    </a>
+    <!-- |=====|| ScrollToTop End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| All js here ||===============| -->
+    <script src="/assets/website/js/frontend/matsurinode/modernizr-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery-3.6.2.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.nice-select.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.fancybox.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.meanmenu.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/one-page-nav-min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/feather.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+    <!-- |=====|| All js End ||=================| -->
+    <!-- |==========================================| -->
+</body>
+
+</html>
