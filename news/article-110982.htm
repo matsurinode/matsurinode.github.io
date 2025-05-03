@@ -1,0 +1,296 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN" class="no-js">
+
+<head>
+        <link rel="canonical" href="https://matsurinode.github.io/news/article-110982.htm" />
+    <!-- Required Meta Tags Start -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Springboot过滤器和拦截器详解及使用场景</title>
+        <meta name="description" content="1、过滤器和拦截器触发时机不一样，过滤器是在请求进入容器后，但请求进入servlet之前进行预处理的。请求结束返回也是，是在servlet处理完后，返回给前端之前。 2、拦截器可以获取IOC容器中的各" />
+        <link rel="icon" href="/assets/website/img/matsurinode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Matsuri Node免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://matsurinode.github.io/news/article-110982.htm" />
+    <meta property="og:site_name" content="Matsuri Node免费机场订阅节点官网" />
+    <meta property="og:title" content="Springboot过滤器和拦截器详解及使用场景" />
+    <meta property="og:image" content="https://matsurinode.github.io/uploads/20241108/96beb25ff4d3c8145c7c9e1d94b4dda8.webp" />
+        <meta property="og:release_date" content="2025-05-03T10:30:35" />
+    <meta property="og:updated_time" content="2025-05-03T10:30:35" />
+        <meta property="og:description" content="1、过滤器和拦截器触发时机不一样，过滤器是在请求进入容器后，但请求进入servlet之前进行预处理的。请求结束返回也是，是在servlet处理完后，返回给前端之前。 2、拦截器可以获取IOC容器中的各" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required Meta Tags End -->
+    <!-- Favicon Tags Start -->
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Favicon Tags End -->
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Springboot过滤器和拦截器详解及使用场景">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/matsurinode/main.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMMQHM2EMD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KMMQHM2EMD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Add your site or application content here -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Preloader Start ||===============| -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__wrapper">
+                <div class="preloader__spinner"></div>
+                <div class="preloader__txt">
+                    <span data-text-preloader="M" class="letters-loading">M</span>
+                    <span data-text-preloader="a" class="letters-loading">a</span>
+                    <span data-text-preloader="t" class="letters-loading">t</span>
+                    <span data-text-preloader="s" class="letters-loading">s</span>
+                    <span data-text-preloader="u" class="letters-loading">u</span>
+                    <span data-text-preloader="r" class="letters-loading">r</span>
+                    <span data-text-preloader="i" class="letters-loading">i</span>
+                    <span data-text-preloader=" " class="letters-loading">&nbsp;</span>
+                    <span data-text-preloader="n" class="letters-loading">n</span>
+                    <span data-text-preloader="o" class="letters-loading">o</span>
+                    <span data-text-preloader="d" class="letters-loading">d</span>
+                    <span data-text-preloader="e" class="letters-loading">e</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- |=====|| Preloader End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| Header Start ||===============| -->
+    <header class="header home1">
+        <!-- Header Menu Start -->
+        <div class="header__menu">
+            <div class="header__menu-wrapper">
+                <div class="container_xl_fluid">
+                    <div class="header__menu-outer">
+                        <div class="row">
+                            <div class="col-xxl-3 col-lg-4">
+                                <div class="header__logo">
+                                    <a href="/">
+                                                                            <span>Matsuri Node</span>
+                                                                        </a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-lg-8">
+                                <div class="main-menu text-xxl-center text-end">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                                                                        <li><a href="/">首页</a></li>
+                                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                                    </ul>
+                                    </nav>
+                                </div>
+                                <div class="mobile-menu"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Menu End -->
+    </header>
+    <!-- |=====|| Header End ||=================| -->
+    <!-- |==========================================| -->
+    <main>
+        <!-- |==========================================| -->
+        <!-- |=====|| Page Title Start ||===============| -->
+        <section class="pageTitle1">
+            <div class="pageTitle1__bg pageTitle1__bg__02"></div>
+            <div class="pageTitle1__breadCrumb">
+                <ul>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li><span>正文</span></li>
+                </ul>
+            </div>
+            <div class="pageTitle1__padding">
+                <div class="container_m container_l">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="pageTitle1__heading">
+                                <h1>Springboot过滤器和拦截器详解及使用场景</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| Page Title End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+        <!-- |=====|| About Start ||===============| -->
+        <section class="about1 content_box_pot_120">
+            <div class="content_box_pob_120">
+                <div class="container_m container_l content_box_pob_120">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="htmledit_views"> </h1> <p><img fetchpriority="high" decoding="async" alt="" height="671" src="http://img.555519.xyz/uploads/20221130/537d7086993083b8bd6a8e2d9b0cb26d.jpg"></p> <p>1、过滤器和拦截器<strong>触发时机不一样</strong>，<strong>过滤器是</strong>在请<strong>求进入容器后</strong>，但请求<strong>进入servlet之前</strong>进<strong>行预处理</strong>的。请求结束返回也是，是在servlet处理完后，返回给前端之前。</p> <p>2、<strong>拦截器</strong>可以获取IOC容器中的各个bean，而过滤器就不行，因为拦<strong>截器是spring提供并管理的</strong>，spring的功能可以被拦截器使用，在拦截器里注入一个service，可以调用业务逻辑。而过滤器是JavaEE标准，只需依赖servlet api ，不需要依赖spring。</p> <p>3、<strong>过滤器的实现</strong>基于<strong>回调函数</strong>。而<strong>拦截器</strong>（代理模式）的实现<strong>基于反射</strong></p> <p>4、<strong>Filter</strong>是依<strong>赖于Servlet容</strong>器，<strong>属于Servlet规范的一部分</strong>，而<strong>拦截器则是独立存</strong>在的，可以在任何情况下使用。</p> <p>5、<strong>Filte</strong>r的执行由<strong>Servlet容器回调完成</strong>，而<strong>拦截器</strong>通常通<strong>过动态代理（反射）</strong>的方式来执行。</p> <p>6、<strong>Filter的生命周</strong>期<strong>由Servlet容器管理</strong>，而<strong>拦截器则</strong>可以通过I<strong>oC容器来管理</strong>，因此可以通过注入等方式来获取其他Bean的实例，因此使用会更方便。</p> <p>过滤器和拦截器非常相似，但是它们有很大的区别<br /> 最简单明了的区别就是**过滤器可以修改request，而拦截器不能<br /> 过滤器需要在servlet容器中实现，拦截器可以适用于javaEE，javaSE等各种环境<br /> 拦截器可以调用IOC容器中的各种依赖，而过滤器不能<br /> 过滤器只能在请求的前后使用，而拦截器可以详细到每个方法**<br /> 区别很多，大家可以去查下</p> <p>总的来说<br /> 过滤器就是筛选出你要的东西，比如requeset中你要的那部分<br /> 拦截器在做安全方面用的比较多，比如终止一些流程<br /> 网上有一张图片很不错，这里拷过来给大家看一下</p> <p><img decoding="async" alt="" height="488" src="http://img.555519.xyz/uploads/20221130/a895b222b36e06e51be0e18aadbf1f3e.jpg"></p> <p>过滤器（Filter） ：可以拿到原始的http请求，但是拿不到你请求的控制器和请求控制器中的方法的信息。</p> <p>拦截器（Interceptor）：可以拿到你请求的控制器和方法，却拿不到请求方法的参数。</p> <p>切片（Aspect）: 可以拿到方法的参数，但是却拿不到http请求和响应的对象</p> <p><img decoding="async" alt="" height="635" src="http://img.555519.xyz/uploads/20221130/03c2363854ecbb90c8b301daebefec50.jpg"></p> </h1> <p><strong>两种方式：</strong><br /><strong>1、</strong>使用spring boot提供的<strong>FilterRegistrationBean注册Filter</strong><br /><strong>2、</strong>使用<strong>原生servlet注解定义Filter</strong><br /> 两种方式的本质都是一样的，<strong>都是去FilterRegistrationBean注册自定义Filter</strong></p> <p><strong>方式一: （使用spring boot提供的FilterRegistrationBean注册Filter ）</strong><br /> ①、先定义Filter：</p> <pre><code>package com.corwien.filter;import javax.servlet.*;import java.io.IOException;public class MyFilter implements Filter {    @Override public void init(FilterConfig filterConfig) throws ServletException {    }    @Override public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException { // do something 处理request 或response     // doFilter()方法中的servletRequest参数的类型是ServletRequest，需要转换为HttpServletRequest类型方便调用某些方法      System.out.println("filter1"); // 调用filter链中的下一个filter   HttpServletRequest request = (HttpServletRequest) servletRequest;        HttpServletResponse response = (HttpServletResponse) servletResponse;         String ip = request.getRemoteAddr();        String url = request.getRequestURL().toString();        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");        Date d = new Date();        String date = sdf.format(d);         System.out.printf("%s %s 访问了 %s%n", date, ip, url);                filterChain.doFilter(request, response);    }    @Override public void destroy() {    }}</code></pre> <p>②、注册自定义Filter</p> <pre><code>@Configurationpublic class FilterConfig {    @Bean    public FilterRegistrationBean registrationBean() {       ** FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new** **MyFilter());**        filterRegistrationBean.addUrlPatterns("/*");        return filterRegistrationBean;    }}</code></pre> <p><strong>方式一的①②步骤可以用下面这段代码代替：</strong></p> <pre><code>@Configuration public class FilterConfig {     @Bean public **FilterRegistrationBean** registFilter() {        **FilterRegistrationBean registration** **= new FilterRegistrationBean();        registration.setFilter(new** **LogCostFilter());**        registration.addUrlPatterns("/*");        registration.setName("LogCostFilter");        registration.setOrder(1); return registration;    } }</code></pre> <pre><code>public class LogCostFilter implements Filter {    @Override public void init(FilterConfig filterConfig) throws ServletException {     }     @Override public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException { long start = System.currentTimeMillis();        filterChain.doFilter(servletRequest,servletResponse);        System.out.println("Execute cost="+(System.currentTimeMillis()-start));    }     @Override public void destroy() {     }</code></pre> <p><strong>方式二：（使用</strong>原生servlet注解定义Filter<strong>&nbsp;）</strong></p> <pre><code>// 注入spring容器@Component // 定义filterName 和过滤的url@WebFilter(filterName = "my2Filter" ,urlPatterns = "/*") public class My2Filter implements Filter {    @Override public void init(FilterConfig filterConfig) throws ServletException {    }    @Override public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {        System.out.println("filter2");    }    @Override public void destroy() {    }}</code></pre> <p>这里直接用<strong>@WebFilter就</strong>可以进行配置，同样，可<strong>以设置url匹配模式，过滤器名称</strong>等。这里需要注意一点的是<strong>@WebFilter这个注解是Servlet3.0的规范，并不是Spring boot提供</strong>的。除了这个注解以外，我们还需在<strong>启动类中加另外一个注解：@ServletComponetScan，指定扫描的包。</strong></p> </h1> <p>实现拦截器可以通过继承&nbsp;HandlerInterceptorAdapter类也可以通过实现HandlerInterceptor这个接口。另外，如果preHandle方法return true，则继续后续处理。</p> <p><strong>首先我们实现拦截器类：</strong></p> <pre><code>public class LogCostInterceptor implements HandlerInterceptor { long start = System.currentTimeMillis();    @Override public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {        start = System.currentTimeMillis(); return true;    }     @Override public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {        System.out.println("Interceptor cost="+(System.currentTimeMillis()-start));    }     @Override public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {    }}</code></pre> <p>我们<strong>还需要</strong>实现<strong>HandlerInterceptor这个接口</strong>，这个接口包括三个方法，p<strong>reHandle是请求执行前</strong>执行的，<strong>postHandler是请求结束</strong>执行的，但<strong>只有preHandle方法返回true的时候才会执</strong>行，<strong>afterCompletion是视图渲染完成后才执行</strong>，同样需要preHandle返回true，该方法通常用于清理资源等工作。除了实现上面的接口外，我们还需对其进行配置：</p> <pre><code>@Configuration public class InterceptorConfig extends WebMvcConfigurerAdapter {     @Override public void addInterceptors(InterceptorRegistry registry) {        registry.addInterceptor(new LogCostInterceptor()).addPathPatterns("/**"); super.addInterceptors(registry);    }}</code></pre> <p>这里我们<strong>继承了WebMVCConfigurerAdapter</strong>，这里我们<strong>重写了addInterceptors这个方法</strong>，进行拦截器的配置，<strong>主要配置项就两个</strong>，一个是<strong>指定拦截器</strong>，第二个是<strong>指定拦截的URL</strong>。</p> <p>坑坑坑：<br /> 拦截器不生效常见问题：<br /> 1）是否有加@Configuration<br /> 2）拦截路径是否有问题&nbsp;**&nbsp;和&nbsp;*<br /> 3）拦截器最后路径一定要 “/**”， 如果是目录的话则是&nbsp;/*/</p> <p>总结一下:创建拦截器需要两步：</p> <blockquote> <p>1、自定义拦截器<br /> 2、注册拦截器</p> </blockquote> </h1> <p>拦截器是在DispatcherServlet这个servlet中执行的，因此所有的请求最先进入Filter，最后离开Filter。其顺序如下。</p> <p>Filter-&gt;Interceptor.preHandle-&gt;Handler-&gt;Interceptor.postHandle-&gt;Interceptor.afterCompletion-&gt;Filter</p> </h1> <p>拦截器本质上是面向切面编程（AOP），符合横切关注点的功能都可以放在拦截器中来实现，主要的应用场景包括：</p> <ul> <li>登录验证，判断用户是否登录。</li> <li>权限验证，判断用户是否有权限访问资源，如校验token</li> <li>日志记录，记录请求操作日志（用户ip，访问时间等），以便统计请求访问量。</li> <li>处理cookie、本地化、国际化、主题等。</li> <li>性能监控，监控请求处理时长等。</li> <li>通用行为：读取cookie得到用户信息并将用户对象放入请求，从而方便后续流程使用，还有如提取Locale、Theme信息等，只要是多个处理器都需要的即可使用拦截器实现）</li> </ul> </h1> <p>1）过滤敏感词汇（防止sql注入）<br /> 2）设置字符编码<br /> 3）URL级别的权限访问控制<br /> 4）压缩响应信息</p> <p><img loading="lazy" decoding="async" alt="" height="407" src="http://img.555519.xyz/uploads/20221130/439f90e7896c0a9c8f2a451f70b31f33.jpg"></p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-110981.htm">TypeScript和javascript的区别</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-87112.htm" title="在日期和时间部分之间使用&#8217;T&#8217;或&#8217;Space&#8217;以外的任何其他字符返回的MySQL返回值是什么？">在日期和时间部分之间使用&#8217;T&#8217;或&#8217;Space&#8217;以外的任何其他字符返回的MySQL返回值是什么？</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-27-free-node-subscribe.htm" title="Matsuri Node 订阅每天更新19.5M/S，Clash/V2ray/Shadowrocket/SSR免费节点订阅链接">Matsuri Node 订阅每天更新19.5M/S，Clash/V2ray/Shadowrocket/SSR免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-24-matsuri-windows.htm" title="Matsuri Node 订阅每天更新18M/S，SSR/V2ray/Shadowrocket/Clash免费节点订阅链接">Matsuri Node 订阅每天更新18M/S，SSR/V2ray/Shadowrocket/Clash免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-105770.htm" title="宠物美容培训学费大概多少钱（正规美容学校学费多少）">宠物美容培训学费大概多少钱（正规美容学校学费多少）</a></li>
+                        <li class="py-2"><a href="/news/article-87113.htm" title="动物医院的英文名（动物医院的英文名叫什么）">动物医院的英文名（动物医院的英文名叫什么）</a></li>
+                        <li class="py-2"><a href="/news/article-98261.htm" title="天津宠物领养中心有哪些地方可以预约（天津宠物领养中心有哪些地方可以预约体检）">天津宠物领养中心有哪些地方可以预约（天津宠物领养中心有哪些地方可以预约体检）</a></li>
+                        <li class="py-2"><a href="/news/article-96061.htm" title="动物防疫站疫苗多少钱一次打的呢（动物防疫站疫苗多少钱一次打的呢视频）">动物防疫站疫苗多少钱一次打的呢（动物防疫站疫苗多少钱一次打的呢视频）</a></li>
+                        <li class="py-2"><a href="/news/article-97466.htm" title="被打过疫苗的宠物抓伤人需要打针吗（被打过疫苗的宠物抓伤人需要打针吗多少钱）">被打过疫苗的宠物抓伤人需要打针吗（被打过疫苗的宠物抓伤人需要打针吗多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-86382.htm" title="有名的毒猫粮（公认的毒猫粮）">有名的毒猫粮（公认的毒猫粮）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-28-matsuri-windows.htm" title="Matsuri Node 订阅每天更新19.4M/S，Shadowrocket/Clash/SSR/V2ray免费节点订阅链接">Matsuri Node 订阅每天更新19.4M/S，Shadowrocket/Clash/SSR/V2ray免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- |=====|| About End ||=================| -->
+        <!-- |==========================================| -->
+        <!-- |==========================================| -->
+    </main>
+        <!-- |==========================================| -->
+    <!-- |=====|| Footer Start ||===============| -->
+    <footer class="footer1">
+        <div class="footer1__bottom">
+            <div class="container_m_30 container_l">
+                <div class="row">
+                    <div class="col-md-12 col_padding">
+                        <div class="footer1__bottom__copyRight text-center">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p><a href="/">Matsuri Node免费机场订阅节点官网</a> 版权所有 Powered by WordPress</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col_padding">
+                        <div class="footer1__bottom__nav text-center text-lg-start">
+                            <a href="#">Customer Support</a>
+                            <a href="#">Terms & Conditions</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col_padding">
+                        <div class="footer1__bottom__social text-center text-lg-end">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- |=====|| Footer End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| ScrollToTop Start ||===============| -->
+    <a href="#" class="scrollToTop">
+        <i class="fas fa-level-up-alt"></i>
+    </a>
+    <!-- |=====|| ScrollToTop End ||=================| -->
+    <!-- |==========================================| -->
+    <!-- |==========================================| -->
+    <!-- |=====|| All js here ||===============| -->
+    <script src="/assets/website/js/frontend/matsurinode/modernizr-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery-3.6.2.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.nice-select.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.fancybox.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/jquery.meanmenu.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/one-page-nav-min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/feather.min.js"></script>
+    <script src="/assets/website/js/frontend/matsurinode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+    <!-- |=====|| All js End ||=================| -->
+    <!-- |==========================================| -->
+</body>
+
+</html>
