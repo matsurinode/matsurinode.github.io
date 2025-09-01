@@ -1,4 +1,4 @@
-# Matsuri Node 订阅每天更新21.2M/S，SSR/Clash/V2ray/Shadowrocket免费节点订阅链接  更新时间 2025-08-22 12:17:40
+# Matsuri Node 订阅每天更新19.7M/S，Clash/SSR/Shadowrocket/V2ray免费节点订阅链接  更新时间 2025-09-01 09:40:21
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://matsurinode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://matsurinode.github.io/uploads/2025/08/0-20250822.yaml
-- https://matsurinode.github.io/uploads/2025/08/1-20250822.yaml
-- https://matsurinode.github.io/uploads/2025/08/2-20250822.yaml
-- https://matsurinode.github.io/uploads/2025/08/3-20250822.yaml
-- https://matsurinode.github.io/uploads/2025/08/4-20250822.yaml
+- https://matsurinode.github.io/uploads/2025/09/0-20250901.yaml
+- https://matsurinode.github.io/uploads/2025/09/1-20250901.yaml
+- https://matsurinode.github.io/uploads/2025/09/2-20250901.yaml
+- https://matsurinode.github.io/uploads/2025/09/3-20250901.yaml
+- https://matsurinode.github.io/uploads/2025/09/4-20250901.yaml
 
 ### V2ray订阅链接
 
-- https://matsurinode.github.io/uploads/2025/08/0-20250822.txt
-- https://matsurinode.github.io/uploads/2025/08/1-20250822.txt
-- https://matsurinode.github.io/uploads/2025/08/2-20250822.txt
-- https://matsurinode.github.io/uploads/2025/08/3-20250822.txt
-- https://matsurinode.github.io/uploads/2025/08/4-20250822.txt
+- https://matsurinode.github.io/uploads/2025/09/0-20250901.txt
+- https://matsurinode.github.io/uploads/2025/09/1-20250901.txt
+- https://matsurinode.github.io/uploads/2025/09/2-20250901.txt
+- https://matsurinode.github.io/uploads/2025/09/3-20250901.txt
+- https://matsurinode.github.io/uploads/2025/09/4-20250901.txt
 
 ### Sing-box订阅链接
 
-- https://matsurinode.github.io/uploads/2025/08/20250822.json
+- https://matsurinode.github.io/uploads/2025/09/20250901.json
 
 ## 更多clash节点订阅 ：
 
