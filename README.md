@@ -1,4 +1,4 @@
-# Matsuri Node 订阅每天更新19.7M/S，Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点免费节点订阅链接  更新时间 2025-10-05 08:46:09
+# Matsuri Node 订阅每天更新21.8M/S，Clash节点/Shadowrocket节点/Singbox节点/SSR节点/V2ray节点免费节点订阅链接  更新时间 2025-10-11 08:55:56
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://matsurinode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://matsurinode.github.io/uploads/2025/10/0-20251005.yaml
-- https://matsurinode.github.io/uploads/2025/10/1-20251005.yaml
-- https://matsurinode.github.io/uploads/2025/10/2-20251005.yaml
-- https://matsurinode.github.io/uploads/2025/10/3-20251005.yaml
-- https://matsurinode.github.io/uploads/2025/10/4-20251005.yaml
+- https://matsurinode.github.io/uploads/2025/10/0-20251011.yaml
+- https://matsurinode.github.io/uploads/2025/10/1-20251011.yaml
+- https://matsurinode.github.io/uploads/2025/10/2-20251011.yaml
+- https://matsurinode.github.io/uploads/2025/10/3-20251011.yaml
+- https://matsurinode.github.io/uploads/2025/10/4-20251011.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://matsurinode.github.io/uploads/2025/10/0-20251005.txt
-- https://matsurinode.github.io/uploads/2025/10/1-20251005.txt
-- https://matsurinode.github.io/uploads/2025/10/2-20251005.txt
-- https://matsurinode.github.io/uploads/2025/10/3-20251005.txt
-- https://matsurinode.github.io/uploads/2025/10/4-20251005.txt
+- https://matsurinode.github.io/uploads/2025/10/0-20251011.txt
+- https://matsurinode.github.io/uploads/2025/10/1-20251011.txt
+- https://matsurinode.github.io/uploads/2025/10/2-20251011.txt
+- https://matsurinode.github.io/uploads/2025/10/3-20251011.txt
+- https://matsurinode.github.io/uploads/2025/10/4-20251011.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://matsurinode.github.io/uploads/2025/10/20251005.json
+- https://matsurinode.github.io/uploads/2025/10/20251011.json
 
 ## 更多Clash节点订阅 ：
 
