@@ -338,14 +338,29 @@ A：短期使用无明显影响，但建议关闭不使用的后台代理，避�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Matsuri 日志太多如何调整日志级别？</h5></div>
+    <div class="panel-body">
+        在 Matsuri 或其内核配置中修改日志级别参数（如从 debug 降为 info 或 warning），同时限制日志轮转与最大文件大小。生产环境建议关闭 debug 日志以减少磁盘 I/O 与性能影响。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 如何隐藏真实 IP？</h5></div>
+    <div class="panel-body">
+        通过启用 TLS、Reality 或 WebSocket + CDN 转发，V2Ray 可有效隐藏真实服务器 IP。这样外部监测只能看到中转节点，从而提升匿名性与安全性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 如何实现节点自动切换？</h5></div>
+    <div class="panel-body">
+        Shadowrocket 可结合延迟测速和策略组自动选择低延迟、稳定节点处理不同流量。提高网页、视频和游戏访问速度，减少掉线和卡顿，优化整体上网体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 多策略组如何管理大量节点？</h5></div>
     <div class="panel-body">
         多策略组可将节点按地区、延迟或用途分类，并结合规则文件自动分流流量。这样可快速选择最优节点，提高访问速度和稳定性，同时优化节点管理和维护效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 如何手动导入节点？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 的延迟测试如何影响策略组选择？</h5></div>
     <div class="panel-body">
-        SSR 节点通常以“ssr://”链接形式提供。用户可在客户端中点击“添加节点”或“导入链接”，粘贴该字符串后保存即可。程序会自动解析服务器地址、端口、加密方式等参数。<hr />    </div>
+        PassWall2 会根据节点延迟结果更新策略组的优先节点，自动选择延迟最低的节点处理流量。这样可以优化访问速度，提高网页浏览、视频和游戏体验的稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Quantumult X 的分流规则如何设置？</h5></div>
@@ -358,24 +373,9 @@ A：短期使用无明显影响，但建议关闭不使用的后台代理，避�
         Potatso Lite 支持通过订阅链接更新节点。用户在设置中输入 URL 后，应用会定期拉取最新配置文件，实现自动更新节点信息。这让日常使用更加便捷和稳定。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 的重写规则能做什么？</h5></div>
+    <div class="panel-heading"><h5>SSR 如何手动导入节点？</h5></div>
     <div class="panel-body">
-        重写（Rewrite）可用于修改请求头、屏蔽广告、替换响应内容等。通过正则匹配目标请求可实现页面定制与功能增强，但应谨慎使用以避免影响正常网站加载与安全验证。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 如何隐藏真实 IP？</h5></div>
-    <div class="panel-body">
-        通过启用 TLS、Reality 或 WebSocket + CDN 转发，V2Ray 可有效隐藏真实服务器 IP。这样外部监测只能看到中转节点，从而提升匿名性与安全性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 日志太多如何调整日志级别？</h5></div>
-    <div class="panel-body">
-        在 Matsuri 或其内核配置中修改日志级别参数（如从 debug 降为 info 或 warning），同时限制日志轮转与最大文件大小。生产环境建议关闭 debug 日志以减少磁盘 I/O 与性能影响。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 如何实现节点自动切换？</h5></div>
-    <div class="panel-body">
-        Shadowrocket 可结合延迟测速和策略组自动选择低延迟、稳定节点处理不同流量。提高网页、视频和游戏访问速度，减少掉线和卡顿，优化整体上网体验。<hr />    </div>
+        SSR 节点通常以“ssr://”链接形式提供。用户可在客户端中点击“添加节点”或“导入链接”，粘贴该字符串后保存即可。程序会自动解析服务器地址、端口、加密方式等参数。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 如何结合策略组实现自动节点切换？</h5></div>
@@ -383,9 +383,9 @@ A：短期使用无明显影响，但建议关闭不使用的后台代理，避�
         PassWall2 会定期测试节点延迟和丢包率，结合策略组自动切换到最优节点。无需手动干预即可保证网页、视频和游戏流量高速稳定访问，优化整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的延迟测试如何影响策略组选择？</h5></div>
+    <div class="panel-heading"><h5>QuantumultX 的重写规则能做什么？</h5></div>
     <div class="panel-body">
-        PassWall2 会根据节点延迟结果更新策略组的优先节点，自动选择延迟最低的节点处理流量。这样可以优化访问速度，提高网页浏览、视频和游戏体验的稳定性。    </div>
+        重写（Rewrite）可用于修改请求头、屏蔽广告、替换响应内容等。通过正则匹配目标请求可实现页面定制与功能增强，但应谨慎使用以避免影响正常网站加载与安全验证。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -433,16 +433,16 @@ A：短期使用无明显影响，但建议关闭不使用的后台代理，避�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-10-19.htm" title="Matsuri Node 订阅每天更新21.2M/S，V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点免费节点订阅链接">Matsuri Node 订阅每天更新21.2M/S，V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-11-2-free-matsuri-node.htm" title="Matsuri Node 订阅每天更新21.9M/S，Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Singbox节点/Trojan节点免费节点订阅链接">Matsuri Node 订阅每天更新21.9M/S，Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Singbox节点/Trojan节点免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-18-free-matsuri-node.htm" title="Matsuri Node 订阅每天更新19.4M/S，Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点免费节点订阅链接">Matsuri Node 订阅每天更新19.4M/S，Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-14-matsuri-github.htm" title="Matsuri Node 订阅每天更新21.6M/S，SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/Clash节点/V2ray节点免费节点订阅链接">Matsuri Node 订阅每天更新21.6M/S，SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/Clash节点/V2ray节点免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/matsuri-node-share-2026-10-17.htm" title="Matsuri Node 订阅每天更新19.9M/S，SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/Trojan节点免费节点订阅链接">Matsuri Node 订阅每天更新19.9M/S，SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/Trojan节点免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-11-5.htm" title="Matsuri Node 订阅每天更新20.7M/S，Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点免费节点订阅链接">Matsuri Node 订阅每天更新20.7M/S，Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-11-6-free-node-subscribe.htm" title="Matsuri Node 订阅每天更新20.4M/S，Singbox节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点免费节点订阅链接">Matsuri Node 订阅每天更新20.4M/S，Singbox节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-11-9.htm" title="Matsuri Node 订阅每天更新20.4M/S，SSR节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点免费节点订阅链接">Matsuri Node 订阅每天更新20.4M/S，SSR节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-11-4-free-node-subscribe.htm" title="Matsuri Node 订阅每天更新19.5M/S，Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点免费节点订阅链接">Matsuri Node 订阅每天更新19.5M/S，Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-26-node-share.htm" title="Matsuri Node 订阅每天更新18.3M/S，Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点/Clash节点免费节点订阅链接">Matsuri Node 订阅每天更新18.3M/S，Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点/Clash节点免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-11-13.htm" title="Matsuri Node 订阅每天更新21.6M/S，Trojan节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点免费节点订阅链接">Matsuri Node 订阅每天更新21.6M/S，Trojan节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/matsuri-node-github-2026-10-15.htm" title="Matsuri Node 订阅每天更新22.3M/S，SSR节点/Trojan节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点免费节点订阅链接">Matsuri Node 订阅每天更新22.3M/S，SSR节点/Trojan节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-12-node-share.htm" title="Matsuri Node 订阅每天更新22.8M/S，V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点免费节点订阅链接">Matsuri Node 订阅每天更新22.8M/S，V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-11-11.htm" title="Matsuri Node 订阅每天更新18.7M/S，Trojan节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点免费节点订阅链接">Matsuri Node 订阅每天更新18.7M/S，Trojan节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-30-matsuri-node.htm" title="Matsuri Node 订阅每天更新20.8M/S，Singbox节点/Clash节点/V2ray节点/Trojan节点/SSR节点/Shadowrocket节点免费节点订阅链接">Matsuri Node 订阅每天更新20.8M/S，Singbox节点/Clash节点/V2ray节点/Trojan节点/SSR节点/Shadowrocket节点免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-10-free-node-subscribe.htm" title="Matsuri Node 订阅每天更新21.3M/S，V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点免费节点订阅链接">Matsuri Node 订阅每天更新21.3M/S，V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-24-matsuri-github.htm" title="Matsuri Node 订阅每天更新21.1M/S，Clash节点/Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点免费节点订阅链接">Matsuri Node 订阅每天更新21.1M/S，Clash节点/Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-16-matsuri-node.htm" title="Matsuri Node 订阅每天更新21.7M/S，Trojan节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点免费节点订阅链接">Matsuri Node 订阅每天更新21.7M/S，Trojan节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/latest-matsuri-node-2026-11-15.htm" title="Matsuri Node 订阅每天更新22.8M/S，Shadowrocket节点/Singbox节点/Clash节点/SSR节点/V2ray节点/Trojan节点免费节点订阅链接">Matsuri Node 订阅每天更新22.8M/S，Shadowrocket节点/Singbox节点/Clash节点/SSR节点/V2ray节点/Trojan节点免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-10-23.htm" title="Matsuri Node 订阅每天更新20.3M/S，Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点免费节点订阅链接">Matsuri Node 订阅每天更新20.3M/S，Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点免费节点订阅链接</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -454,7 +454,7 @@ A：短期使用无明显影响，但建议关闭不使用的后台代理，避�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">16</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">21</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
